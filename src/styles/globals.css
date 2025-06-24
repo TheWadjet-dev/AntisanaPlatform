@@ -1,0 +1,11 @@
+/* Ensure this file is processed by Tailwind CSS via PostCSS or a compatible build tool */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-white text-gray-900;
+  }
+}
