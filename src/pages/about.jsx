@@ -27,7 +27,7 @@ export default function About() {
           >
             {['antisana1.webp', 'antisana2.webp', 'antisana3.webp'].map((img, i) => (
               <div key={i} className="w-full flex-shrink-0">
-                <Image
+                <img
                   src={`/assets/images/${img}`}
                   alt={`Reserva Antisana ${i + 1}`}
                   width={1200}
