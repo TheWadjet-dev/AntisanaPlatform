@@ -20,11 +20,39 @@ export default function PhaserGame() {
     if (!gameRef.current) return
     if (showIntro || showGameOver) return
 
+    // Obtener dimensiones responsivas
+    const getGameDimensions = () => {
+      const container = gameRef.current
+      if (!container) return { width: 800, height: 600 }
+      
+      const containerWidth = container.offsetWidth
+      const containerHeight = container.offsetHeight
+      
+      // Mantener ratio 4:3
+      let gameWidth = Math.min(containerWidth, 800)
+      let gameHeight = Math.min(containerHeight, 600)
+      
+      // Ajustar para mantener el ratio
+      if (gameWidth / gameHeight > 4/3) {
+        gameWidth = gameHeight * (4/3)
+      } else {
+        gameHeight = gameWidth * (3/4)
+      }
+      
+      return { width: Math.floor(gameWidth), height: Math.floor(gameHeight) }
+    }
+
+    const { width: gameWidth, height: gameHeight } = getGameDimensions()
+
     const config = {
       type: Phaser.AUTO,
-      width: 800,
-      height: 600,
+      width: gameWidth,
+      height: gameHeight,
       parent: gameRef.current,
+      scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+      },
       physics: {
         default: 'arcade',
         arcade: {
@@ -68,7 +96,11 @@ export default function PhaserGame() {
     }
 
     function create() {
-      this.add.rectangle(400, 300, 800, 600, 0xcceeff)
+      // Obtener dimensiones del juego
+      const gameWidth = this.cameras.main.width
+      const gameHeight = this.cameras.main.height
+      
+      this.add.rectangle(gameWidth/2, gameHeight/2, gameWidth, gameHeight, 0xcceeff)
 
       collectSound = this.sound.add('collect')
       hitSound = this.sound.add('hit')
@@ -121,17 +153,23 @@ this.anims.create({
         repeat: -1
       })
 
-      condor = this.physics.add.sprite(400, 500, 'condor', 0).play('fly')
-      condor.setScale(3)
+      condor = this.physics.add.sprite(gameWidth/2, gameHeight * 0.8, 'condor', 0).play('fly')
+      
+      // Escalar según el tamaño de la pantalla
+      const condorScale = Math.min(gameWidth / 800, gameHeight / 600) * 3
+      condor.setScale(condorScale)
       condor.setCollideWorldBounds(true)
-
-
 
       cursors = this.input.keyboard.createCursorKeys()
 
       for (let i = 0; i < 6; i++) {
-        const drop = this.physics.add.sprite(Phaser.Math.Between(100, 700), Phaser.Math.Between(-300, 0), 'drop')
-        drop.setScale(0.8)
+        const drop = this.physics.add.sprite(
+          Phaser.Math.Between(gameWidth * 0.1, gameWidth * 0.9), 
+          Phaser.Math.Between(-gameHeight * 0.5, 0), 
+          'drop'
+        )
+        const dropScale = Math.min(gameWidth / 800, gameHeight / 600) * 0.8
+        drop.setScale(dropScale)
         drop.play('drip')
         drop.setVelocityY(Phaser.Math.Between(80, 120))
         drops.push(drop)
@@ -139,21 +177,35 @@ this.anims.create({
       }
 
       for (let i = 0; i < 4; i++) {
-        const cloud = this.physics.add.sprite(Phaser.Math.Between(100, 700), Phaser.Math.Between(-300, 0), 'cloud')
-        cloud.setScale(0.6)
+        const cloud = this.physics.add.sprite(
+          Phaser.Math.Between(gameWidth * 0.1, gameWidth * 0.9), 
+          Phaser.Math.Between(-gameHeight * 0.5, 0), 
+          'cloud'
+        )
+        const cloudScale = Math.min(gameWidth / 800, gameHeight / 600) * 0.6
+        cloud.setScale(cloudScale)
         cloud.play('cloudLoop')
         cloud.setVelocityY(Phaser.Math.Between(40, 70))
         clouds.push(cloud)
         this.physics.add.overlap(condor, cloud, () => hitCloud(this, cloud))
       }
 
-      scoreText = this.add.text(20, 20, 'Puntos: 0', { font: '20px Arial', fill: '#000' })
-      livesText = this.add.text(20, 50, 'Vidas: 3', { font: '20px Arial', fill: '#000' })
-      gameOverText = this.add.text(400, 300, '', { font: '32px Arial', fill: 'red' }).setOrigin(0.5)
+      // Ajustar tamaño de texto según pantalla
+      const fontSize = Math.max(16, Math.min(gameWidth / 40, 20))
+      scoreText = this.add.text(20, 20, 'Puntos: 0', { fontSize: `${fontSize}px`, fontFamily: 'Arial', fill: '#000' })
+      livesText = this.add.text(20, 50, 'Vidas: 3', { fontSize: `${fontSize}px`, fontFamily: 'Arial', fill: '#000' })
+      gameOverText = this.add.text(gameWidth/2, gameHeight/2, '', { 
+        fontSize: `${Math.max(24, Math.min(gameWidth / 25, 32))}px`, 
+        fontFamily: 'Arial', 
+        fill: 'red' 
+      }).setOrigin(0.5)
     }
 
     function update() {
       if (lives <= 0) return
+      
+      const gameWidth = this.cameras.main.width
+      const gameHeight = this.cameras.main.height
 
       let moving = false
 
@@ -182,32 +234,34 @@ if (cursors.left.isDown) {
   condor.anims.stop()
 }
 
-
       drops.forEach((drop) => {
-        if (drop.y > 600) {
+        if (drop.y > gameHeight) {
           drop.y = -50
-          drop.x = Phaser.Math.Between(100, 700)
+          drop.x = Phaser.Math.Between(gameWidth * 0.1, gameWidth * 0.9)
         }
       })
 
       clouds.forEach((cloud) => {
-        if (cloud.y > 600) {
+        if (cloud.y > gameHeight) {
           cloud.y = -50
-          cloud.x = Phaser.Math.Between(100, 700)
+          cloud.x = Phaser.Math.Between(gameWidth * 0.1, gameWidth * 0.9)
         }
       })
     }
 
     function collectDrop(scene, drop) {
+      const gameWidth = scene.cameras.main.width
       score++
       collectSound.play()
       scoreText.setText('Puntos: ' + score)
       drop.y = -50
-      drop.x = Phaser.Math.Between(100, 700)
+      drop.x = Phaser.Math.Between(gameWidth * 0.1, gameWidth * 0.9)
     }
 
     function hitCloud(scene, cloud) {
   if (lives <= 0) return
+  
+  const gameWidth = scene.cameras.main.width
 
   // Evitar múltiples colisiones seguidas
   cloud.disableBody(true, true)
@@ -233,7 +287,7 @@ if (cursors.left.isDown) {
 } else {
     // Reaparecer la nube después de 1.5 segundos
     scene.time.delayedCall(1500, () => {
-      cloud.enableBody(true, Phaser.Math.Between(100, 700), -50, true, true)
+      cloud.enableBody(true, Phaser.Math.Between(gameWidth * 0.1, gameWidth * 0.9), -50, true, true)
       cloud.setVelocityY(Phaser.Math.Between(40, 70))
     })
   }
@@ -246,16 +300,16 @@ if (cursors.left.isDown) {
   }, [showIntro, showGameOver])
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full max-w-4xl mx-auto p-4">
       {showIntro && (
-        <div className="absolute inset-0 z-20 bg-white bg-opacity-95 flex flex-col justify-center items-center text-center p-8">
-          <h2 className="text-3xl font-bold mb-4">Bienvenido al juego Cóndor Guardián</h2>
-          <p className="mb-2">🕹️ Usa las flechas del teclado para mover al cóndor.</p>
-          <p className="mb-2">💧 Atrapa gotas de agua para sumar puntos.</p>
-          <p className="mb-4">☁️ Evita las nubes contaminantes, ¡pierdes vidas!</p>
+        <div className="absolute inset-0 z-20 bg-white bg-opacity-95 flex flex-col justify-center items-center text-center p-4 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Bienvenido al juego Cóndor Guardián</h2>
+          <p className="mb-2 text-sm md:text-base">🕹️ Usa las flechas del teclado o los controles táctiles para mover al cóndor.</p>
+          <p className="mb-2 text-sm md:text-base">💧 Atrapa gotas de agua para sumar puntos.</p>
+          <p className="mb-4 text-sm md:text-base">☁️ Evita las nubes contaminantes, ¡pierdes vidas!</p>
           <button
             onClick={startGame}
-            className="px-6 py-3 bg-green-600 text-white font-bold rounded hover:bg-green-700 transition"
+            className="px-4 py-2 md:px-6 md:py-3 bg-green-600 text-white font-bold rounded hover:bg-green-700 transition text-sm md:text-base"
           >
             Jugar
           </button>
@@ -263,29 +317,73 @@ if (cursors.left.isDown) {
       )}
 
       {showGameOver && (
-        <div className="absolute inset-0 z-20 bg-black bg-opacity-80 text-white flex flex-col justify-center items-center text-center p-8">
-          <h2 className="text-3xl font-bold mb-4">🎮 Fin del juego</h2>
-          <p className="mb-2">Puntaje: {lastScore}</p>
-          <p className="mb-4">Puntaje máximo: {highScore}</p>
+        <div className="absolute inset-0 z-20 bg-black bg-opacity-80 text-white flex flex-col justify-center items-center text-center p-4 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">🎮 Fin del juego</h2>
+          <p className="mb-2 text-sm md:text-base">Puntaje: {lastScore}</p>
+          <p className="mb-4 text-sm md:text-base">Puntaje máximo: {highScore}</p>
           <button
             onClick={startGame}
-            className="px-6 py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition"
+            className="px-4 py-2 md:px-6 md:py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition text-sm md:text-base"
           >
             Reintentar
           </button>
         </div>
       )}
 
+      {/* Canvas del juego */}
       <div
         ref={gameRef}
+        className="w-full max-w-full mx-auto bg-gray-100 rounded-lg overflow-hidden"
         style={{
-          width: '800px',
-          height: '600px',
-          margin: '0 auto',
+          aspectRatio: '4/3',
+          maxWidth: '800px',
+          maxHeight: '600px',
           opacity: showIntro || showGameOver ? 0.3 : 1,
           pointerEvents: showIntro || showGameOver ? 'none' : 'auto'
         }}
       />
+
+      {/* Controles táctiles para móviles */}
+      {!showIntro && !showGameOver && (
+        <div className="mt-4 block md:hidden">
+          <div className="grid grid-cols-3 gap-2 max-w-xs mx-auto">
+            <div></div>
+            <button
+              onTouchStart={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp' })) }}
+              onTouchEnd={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'ArrowUp' })) }}
+              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold"
+              style={{ touchAction: 'manipulation' }}
+            >
+              ↑
+            </button>
+            <div></div>
+            <button
+              onTouchStart={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' })) }}
+              onTouchEnd={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'ArrowLeft' })) }}
+              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold"
+              style={{ touchAction: 'manipulation' }}
+            >
+              ←
+            </button>
+            <button
+              onTouchStart={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown' })) }}
+              onTouchEnd={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'ArrowDown' })) }}
+              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold"
+              style={{ touchAction: 'manipulation' }}
+            >
+              ↓
+            </button>
+            <button
+              onTouchStart={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' })) }}
+              onTouchEnd={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'ArrowRight' })) }}
+              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold"
+              style={{ touchAction: 'manipulation' }}
+            >
+              →
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

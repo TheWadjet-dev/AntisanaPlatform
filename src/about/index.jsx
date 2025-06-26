@@ -8,7 +8,7 @@ export default function About() {
         The Antisana ecosystem is a high-altitude region in Ecuador known for its biodiversity,
         glaciers, and importance as a water source.
       </p>
-      <Image src="/assets/images/antisana.jpg" alt="Antisana" width={800} height={450} />
+      <Image src="/assets/images/antisana1.webp" alt="Antisana" width={800} height={450} />
     </div>
   )
 }
