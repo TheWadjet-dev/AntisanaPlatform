@@ -7,7 +7,6 @@ const PhaserGame = dynamic(() => import('../components/PhaserGame'), { ssr: fals
 export default function ActividadPage() {
   return (
     <MainLayout>
-      <h1 className="text-3xl font-bold text-center my-8">Juego: Cóndor Guardián</h1>
       <div className="flex justify-center">
         <PhaserGame />
       </div>

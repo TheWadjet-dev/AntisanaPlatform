@@ -13,10 +13,11 @@ export default function PhaserGame() {
   const startGame = () => {
     setShowIntro(false)
     setShowGameOver(false)
+    if (gameRef.current) gameRef.current.innerHTML = ''
   }
 
   useEffect(() => {
-    if (!gameRef.current || !gameRef.current.innerHTML) return
+    if (!gameRef.current) return
     if (showIntro || showGameOver) return
 
     const config = {
@@ -42,36 +43,69 @@ export default function PhaserGame() {
     let drops = [], clouds = []
     let score = 0
     let lives = 3
-    let game
-
-    game = new Phaser.Game(config)
+    let collectSound, hitSound, gameOverSound
+    let game = new Phaser.Game(config)
 
     function preload() {
       this.load.spritesheet('condor', '/sprites/bird_condor.png', {
+        frameWidth: 32,
+        frameHeight: 32
+      })
+
+      this.load.spritesheet('drop', '/sprites/water_drop.png', {
         frameWidth: 64,
         frameHeight: 64
       })
 
-      this.load.spritesheet('drop', '/sprites/water_drop.png', {
-        frameWidth: 48,
-        frameHeight: 64
+      this.load.spritesheet('cloud', '/sprites/smoke_loop.png', {
+        frameWidth: 256,
+        frameHeight: 256
       })
 
-      this.load.spritesheet('cloud', '/sprites/smoke_loop.png', {
-        frameWidth: 128,
-        frameHeight: 128
-      })
+      this.load.audio('collect', '/sounds/collect.wav')
+      this.load.audio('hit', '/sounds/hit.mp3')
+      this.load.audio('gameover', '/sounds/game_over.wav')
     }
 
     function create() {
       this.add.rectangle(400, 300, 800, 600, 0xcceeff)
 
+      collectSound = this.sound.add('collect')
+      hitSound = this.sound.add('hit')
+      gameOverSound = this.sound.add('gameover')
+
+      // Izquierda (volando)
+this.anims.create({
+  key: 'fly-left',
+  frames: this.anims.generateFrameNumbers('condor', { start: 0, end: 2 }),
+  frameRate: 8,
+  repeat: -1
+})
+
+// Derecha (volando)
+this.anims.create({
+  key: 'fly-right',
+  frames: this.anims.generateFrameNumbers('condor', { start: 9, end: 11 }),
+  frameRate: 8,
+  repeat: -1
+})
+
+// Abajo (volando)
+this.anims.create({
+  key: 'fly-down',
+  frames: this.anims.generateFrameNumbers('condor', { start: 6, end: 8 }),
+  frameRate: 8,
+  repeat: -1
+})
+
+// Arriba (volando)
       this.anims.create({
-        key: 'fly',
-        frames: this.anims.generateFrameNumbers('condor', { start: 0, end: 7 }),
-        frameRate: 10,
+        key: 'fly-up',
+        frames: this.anims.generateFrameNumbers('condor', { start: 3, end: 5 }),
+        frameRate: 8,
         repeat: -1
       })
+
 
       this.anims.create({
         key: 'drip',
@@ -82,28 +116,33 @@ export default function PhaserGame() {
 
       this.anims.create({
         key: 'cloudLoop',
-        frames: this.anims.generateFrameNumbers('cloud', { start: 0, end: 39 }),
+        frames: this.anims.generateFrameNumbers('cloud', { start: 0, end: 29 }),
         frameRate: 8,
         repeat: -1
       })
 
-      condor = this.physics.add.sprite(400, 500, 'condor').play('fly')
+      condor = this.physics.add.sprite(400, 500, 'condor', 0).play('fly')
+      condor.setScale(3)
       condor.setCollideWorldBounds(true)
+
+
 
       cursors = this.input.keyboard.createCursorKeys()
 
       for (let i = 0; i < 6; i++) {
         const drop = this.physics.add.sprite(Phaser.Math.Between(100, 700), Phaser.Math.Between(-300, 0), 'drop')
+        drop.setScale(0.8)
         drop.play('drip')
-        drop.setVelocityY(Phaser.Math.Between(50, 100))
+        drop.setVelocityY(Phaser.Math.Between(80, 120))
         drops.push(drop)
         this.physics.add.overlap(condor, drop, () => collectDrop(this, drop))
       }
 
       for (let i = 0; i < 4; i++) {
-        const cloud = this.physics.add.sprite(Phaser.Math.Between(100, 700), Phaser.Math.Between(50, 150), 'cloud')
+        const cloud = this.physics.add.sprite(Phaser.Math.Between(100, 700), Phaser.Math.Between(-300, 0), 'cloud')
+        cloud.setScale(0.6)
         cloud.play('cloudLoop')
-        cloud.setVelocityX(Phaser.Math.Between(-40, 40))
+        cloud.setVelocityY(Phaser.Math.Between(40, 70))
         clouds.push(cloud)
         this.physics.add.overlap(condor, cloud, () => hitCloud(this, cloud))
       }
@@ -116,13 +155,33 @@ export default function PhaserGame() {
     function update() {
       if (lives <= 0) return
 
-      if (cursors.left.isDown) condor.setVelocityX(-200)
-      else if (cursors.right.isDown) condor.setVelocityX(200)
-      else condor.setVelocityX(0)
+      let moving = false
 
-      if (cursors.up.isDown) condor.setVelocityY(-200)
-      else if (cursors.down.isDown) condor.setVelocityY(200)
-      else condor.setVelocityY(0)
+if (cursors.left.isDown) {
+  condor.setVelocityX(-200)
+  condor.setVelocityY(0)
+  condor.anims.play('fly-left', true)
+  moving = true
+} else if (cursors.right.isDown) {
+  condor.setVelocityX(200)
+  condor.setVelocityY(0)
+  condor.anims.play('fly-right', true)
+  moving = true
+} else if (cursors.up.isDown) {
+  condor.setVelocityY(-200)
+  condor.setVelocityX(0)
+  condor.anims.play('fly-up', true)
+  moving = true
+} else if (cursors.down.isDown) {
+  condor.setVelocityY(200)
+  condor.setVelocityX(0)
+  condor.anims.play('fly-down', true)
+  moving = true
+} else {
+  condor.setVelocity(0)
+  condor.anims.stop()
+}
+
 
       drops.forEach((drop) => {
         if (drop.y > 600) {
@@ -132,36 +191,54 @@ export default function PhaserGame() {
       })
 
       clouds.forEach((cloud) => {
-        if (cloud.x < 0 || cloud.x > 800) {
-          cloud.setVelocityX(-cloud.body.velocity.x)
+        if (cloud.y > 600) {
+          cloud.y = -50
+          cloud.x = Phaser.Math.Between(100, 700)
         }
       })
     }
 
     function collectDrop(scene, drop) {
       score++
+      collectSound.play()
       scoreText.setText('Puntos: ' + score)
       drop.y = -50
       drop.x = Phaser.Math.Between(100, 700)
     }
 
     function hitCloud(scene, cloud) {
-      lives--
-      livesText.setText('Vidas: ' + lives)
-      if (lives <= 0) {
-        condor.setTint(0xff0000)
-        condor.setVelocity(0)
-        gameOverText.setText('¡Juego Terminado!')
-        setTimeout(() => {
-          if (score > highScore) {
-            localStorage.setItem('highScore', score.toString())
-            setHighScore(score)
-          }
-          setLastScore(score)
-          setShowGameOver(true)
-        }, 1500)
-      }
+  if (lives <= 0) return
+
+  // Evitar múltiples colisiones seguidas
+  cloud.disableBody(true, true)
+
+  hitSound.play()
+  lives--
+  livesText.setText('Vidas: ' + lives)
+
+  if (lives <= 0) {
+  condor.setTint(0xff0000)
+  condor.setVelocity(0)
+  gameOverText.setText('¡Juego Terminado!')
+  gameOverSound.play() // ⬅️ aquí está el nuevo sonido
+
+  setTimeout(() => {
+    if (score > highScore) {
+      localStorage.setItem('highScore', score.toString())
+      setHighScore(score)
     }
+    setLastScore(score)
+    setShowGameOver(true)
+  }, 1500)
+} else {
+    // Reaparecer la nube después de 1.5 segundos
+    scene.time.delayedCall(1500, () => {
+      cloud.enableBody(true, Phaser.Math.Between(100, 700), -50, true, true)
+      cloud.setVelocityY(Phaser.Math.Between(40, 70))
+    })
+  }
+    }
+
 
     return () => {
       game.destroy(true)

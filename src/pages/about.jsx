@@ -30,6 +30,8 @@ export default function About() {
                 <Image
                   src={`/assets/images/${img}`}
                   alt={`Reserva Antisana ${i + 1}`}
+                  width={1200}
+                  height={600}
                   className="rounded-md object-cover w-full h-96"
                 />
               </div>
