@@ -3,12 +3,95 @@ import Phaser from 'phaser'
 
 export default function PhaserGame() {
   const gameRef = useRef(null)
+  const mobileControlsRef = useRef({
+    up: false,
+    down: false,
+    left: false,
+    right: false
+  })
+  
+  // Referencias para los botones de control
+  const upButtonRef = useRef(null)
+  const downButtonRef = useRef(null)
+  const leftButtonRef = useRef(null)
+  const rightButtonRef = useRef(null)
+  
   const [showIntro, setShowIntro] = useState(true)
   const [showGameOver, setShowGameOver] = useState(false)
   const [lastScore, setLastScore] = useState(0)
   const [highScore, setHighScore] = useState(
     typeof window !== 'undefined' ? Number(localStorage.getItem('highScore')) || 0 : 0
   )
+  
+  // Estados para controles móviles
+  const [mobileControls, setMobileControls] = useState({
+    up: false,
+    down: false,
+    left: false,
+    right: false
+  })
+
+  // Actualizar la referencia cuando cambien los controles
+  useEffect(() => {
+    mobileControlsRef.current = mobileControls
+  }, [mobileControls])
+
+  // Configurar event listeners para controles táctiles
+  useEffect(() => {
+    const buttons = [
+      { ref: upButtonRef, direction: 'up' },
+      { ref: downButtonRef, direction: 'down' },
+      { ref: leftButtonRef, direction: 'left' },
+      { ref: rightButtonRef, direction: 'right' }
+    ]
+
+    const cleanupFunctions = []
+
+    buttons.forEach(({ ref, direction }) => {
+      const button = ref.current
+      if (!button) return
+
+      const handleTouchStart = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setMobileControls(prev => ({
+          up: direction === 'up',
+          down: direction === 'down',
+          left: direction === 'left',
+          right: direction === 'right'
+        }))
+      }
+
+      const handleTouchEnd = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setMobileControls(prev => ({ ...prev, [direction]: false }))
+      }
+
+      const handleTouchCancel = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setMobileControls(prev => ({ ...prev, [direction]: false }))
+      }
+
+      // Agregar event listeners con passive: false
+      button.addEventListener('touchstart', handleTouchStart, { passive: false })
+      button.addEventListener('touchend', handleTouchEnd, { passive: false })
+      button.addEventListener('touchcancel', handleTouchCancel, { passive: false })
+
+      // Guardar función de cleanup
+      cleanupFunctions.push(() => {
+        button.removeEventListener('touchstart', handleTouchStart)
+        button.removeEventListener('touchend', handleTouchEnd)
+        button.removeEventListener('touchcancel', handleTouchCancel)
+      })
+    })
+
+    // Cleanup al desmontar
+    return () => {
+      cleanupFunctions.forEach(cleanup => cleanup())
+    }
+  }, [showIntro, showGameOver])
 
   const startGame = () => {
     setShowIntro(false)
@@ -209,30 +292,39 @@ this.anims.create({
 
       let moving = false
 
-if (cursors.left.isDown) {
-  condor.setVelocityX(-200)
-  condor.setVelocityY(0)
-  condor.anims.play('fly-left', true)
-  moving = true
-} else if (cursors.right.isDown) {
-  condor.setVelocityX(200)
-  condor.setVelocityY(0)
-  condor.anims.play('fly-right', true)
-  moving = true
-} else if (cursors.up.isDown) {
-  condor.setVelocityY(-200)
-  condor.setVelocityX(0)
-  condor.anims.play('fly-up', true)
-  moving = true
-} else if (cursors.down.isDown) {
-  condor.setVelocityY(200)
-  condor.setVelocityX(0)
-  condor.anims.play('fly-down', true)
-  moving = true
-} else {
-  condor.setVelocity(0)
-  condor.anims.stop()
-}
+      // Obtener controles móviles de la referencia actual
+      const currentMobileControls = mobileControlsRef.current
+
+      // Combinar controles de teclado y móviles
+      const isLeftPressed = (cursors && cursors.left.isDown) || currentMobileControls.left
+      const isRightPressed = (cursors && cursors.right.isDown) || currentMobileControls.right
+      const isUpPressed = (cursors && cursors.up.isDown) || currentMobileControls.up
+      const isDownPressed = (cursors && cursors.down.isDown) || currentMobileControls.down
+
+      if (isLeftPressed) {
+        condor.setVelocityX(-200)
+        condor.setVelocityY(0)
+        condor.anims.play('fly-left', true)
+        moving = true
+      } else if (isRightPressed) {
+        condor.setVelocityX(200)
+        condor.setVelocityY(0)
+        condor.anims.play('fly-right', true)
+        moving = true
+      } else if (isUpPressed) {
+        condor.setVelocityY(-200)
+        condor.setVelocityX(0)
+        condor.anims.play('fly-up', true)
+        moving = true
+      } else if (isDownPressed) {
+        condor.setVelocityY(200)
+        condor.setVelocityX(0)
+        condor.anims.play('fly-down', true)
+        moving = true
+      } else {
+        condor.setVelocity(0)
+        condor.anims.stop()
+      }
 
       drops.forEach((drop) => {
         if (drop.y > gameHeight) {
@@ -297,7 +389,7 @@ if (cursors.left.isDown) {
     return () => {
       game.destroy(true)
     }
-  }, [showIntro, showGameOver])
+  }, [showIntro, showGameOver]) // Removido mobileControls de las dependencias
 
   return (
     <div className="relative w-full max-w-4xl mx-auto p-4">
@@ -349,39 +441,82 @@ if (cursors.left.isDown) {
           <div className="grid grid-cols-3 gap-2 max-w-xs mx-auto">
             <div></div>
             <button
-              onTouchStart={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp' })) }}
-              onTouchEnd={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'ArrowUp' })) }}
-              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold"
-              style={{ touchAction: 'manipulation' }}
+              ref={upButtonRef}
+              onMouseDown={(e) => { 
+                e.preventDefault(); 
+                setMobileControls(prev => ({ ...prev, up: true, down: false, left: false, right: false }))
+              }}
+              onMouseUp={(e) => { 
+                e.preventDefault(); 
+                setMobileControls(prev => ({ ...prev, up: false }))
+              }}
+              onMouseLeave={(e) => { 
+                setMobileControls(prev => ({ ...prev, up: false }))
+              }}
+              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold select-none transition-colors"
+              style={{ touchAction: 'manipulation', userSelect: 'none', webkitUserSelect: 'none' }}
             >
               ↑
             </button>
             <div></div>
             <button
-              onTouchStart={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' })) }}
-              onTouchEnd={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'ArrowLeft' })) }}
-              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold"
-              style={{ touchAction: 'manipulation' }}
+              ref={leftButtonRef}
+              onMouseDown={(e) => { 
+                e.preventDefault(); 
+                setMobileControls(prev => ({ ...prev, left: true, right: false, up: false, down: false }))
+              }}
+              onMouseUp={(e) => { 
+                e.preventDefault(); 
+                setMobileControls(prev => ({ ...prev, left: false }))
+              }}
+              onMouseLeave={(e) => { 
+                setMobileControls(prev => ({ ...prev, left: false }))
+              }}
+              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold select-none transition-colors"
+              style={{ touchAction: 'manipulation', userSelect: 'none', webkitUserSelect: 'none' }}
             >
               ←
             </button>
             <button
-              onTouchStart={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown' })) }}
-              onTouchEnd={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'ArrowDown' })) }}
-              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold"
-              style={{ touchAction: 'manipulation' }}
+              ref={downButtonRef}
+              onMouseDown={(e) => { 
+                e.preventDefault(); 
+                setMobileControls(prev => ({ ...prev, down: true, up: false, left: false, right: false }))
+              }}
+              onMouseUp={(e) => { 
+                e.preventDefault(); 
+                setMobileControls(prev => ({ ...prev, down: false }))
+              }}
+              onMouseLeave={(e) => { 
+                setMobileControls(prev => ({ ...prev, down: false }))
+              }}
+              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold select-none transition-colors"
+              style={{ touchAction: 'manipulation', userSelect: 'none', webkitUserSelect: 'none' }}
             >
               ↓
             </button>
             <button
-              onTouchStart={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' })) }}
-              onTouchEnd={(e) => { e.preventDefault(); window.dispatchEvent(new KeyboardEvent('keyup', { key: 'ArrowRight' })) }}
-              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold"
-              style={{ touchAction: 'manipulation' }}
+              ref={rightButtonRef}
+              onMouseDown={(e) => { 
+                e.preventDefault(); 
+                setMobileControls(prev => ({ ...prev, right: true, left: false, up: false, down: false }))
+              }}
+              onMouseUp={(e) => { 
+                e.preventDefault(); 
+                setMobileControls(prev => ({ ...prev, right: false }))
+              }}
+              onMouseLeave={(e) => { 
+                setMobileControls(prev => ({ ...prev, right: false }))
+              }}
+              className="bg-blue-500 text-white p-3 rounded-lg active:bg-blue-600 text-xl font-bold select-none transition-colors"
+              style={{ touchAction: 'manipulation', userSelect: 'none', webkitUserSelect: 'none' }}
             >
               →
             </button>
           </div>
+          <p className="text-center text-sm text-gray-600 mt-2">
+            Usa los controles para mover al cóndor
+          </p>
         </div>
       )}
     </div>

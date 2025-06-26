@@ -28,16 +28,18 @@ export default function App({ Component, pageProps }) {
         <meta name="description" content="Plataforma educativa e interactiva sobre el ecosistema Antisana" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#059669" />
+        <meta name="msapplication-tap-highlight" content="no" />
         <meta name="theme-color" content="#059669" />
+        
+        {/* Prevenir zoom en inputs y mejorar touch */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
         
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
         
         {/* Apple Touch Icons */}
         <link rel="apple-touch-icon" href="/assets/images/antisana1.webp" />
-        
-        {/* Viewport */}
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes" />
         
         {/* Favicon */}
         <link rel="icon" href="/assets/images/antisana1.webp" />
