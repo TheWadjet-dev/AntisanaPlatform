@@ -1,4 +1,4 @@
-const CACHE_NAME = 'antisana-platform-v1'
+const CACHE_NAME = 'antisana-platform-v2'
 const urlsToCache = [
   '/',
   '/home',
@@ -7,9 +7,6 @@ const urlsToCache = [
   '/interactive',
   '/volcan',
   '/actividad',
-  '/_next/static/css/app.css',
-  '/_next/static/chunks/main.js',
-  '/_next/static/chunks/pages/_app.js',
   '/assets/images/antisana1.webp',
   '/assets/images/antisana2.webp',
   '/assets/images/antisana3.webp',
@@ -18,7 +15,8 @@ const urlsToCache = [
   '/sprites/smoke_loop.png',
   '/sounds/collect.wav',
   '/sounds/hit.mp3',
-  '/sounds/game_over.wav'
+  '/sounds/game_over.wav',
+  '/manifest.json'
 ]
 
 // Instalar SW
@@ -28,20 +26,39 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('Service Worker: Cache abierto')
-        // Cachear recursos uno por uno para evitar fallos en iOS
-        return Promise.allSettled(
-          urlsToCache.map(url => 
-            cache.add(url).catch(err => {
-              console.warn('Service Worker: Error cacheando', url, err)
-              return Promise.resolve() // No fallar por un recurso
-            })
-          )
-        )
+        // Cachear recursos esenciales primero
+        const essentialResources = [
+          '/',
+          '/home',
+          '/about',
+          '/manifest.json'
+        ]
+        
+        const otherResources = urlsToCache.filter(url => !essentialResources.includes(url))
+        
+        // Cachear recursos esenciales primero
+        return cache.addAll(essentialResources)
+          .then(() => {
+            // Luego intentar cachear el resto, pero sin fallar si alguno falla
+            return Promise.allSettled(
+              otherResources.map(url => 
+                cache.add(url).catch(err => {
+                  console.warn('Service Worker: Error cacheando', url, err)
+                  return Promise.resolve()
+                })
+              )
+            )
+          })
       })
       .then(() => {
         console.log('Service Worker: Instalación completada')
-        // Forzar activación inmediata
-        return self.skipWaiting()
+        // En iOS, skipWaiting puede causar problemas, así que lo hacemos opcional
+        if ('skipWaiting' in self) {
+          return self.skipWaiting()
+        }
+      })
+      .catch(err => {
+        console.error('Service Worker: Error durante instalación:', err)
       })
   )
 })
