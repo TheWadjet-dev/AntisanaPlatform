@@ -242,6 +242,11 @@ this.anims.create({
       const condorScale = Math.min(gameWidth / 800, gameHeight / 600) * 3
       condor.setScale(condorScale)
       condor.setCollideWorldBounds(true)
+      
+      // Ajustar el área de colisión del cóndor para que sea más precisa
+      // La imagen original es 32x32, ajustamos para que coincida mejor con el sprite visible
+      condor.body.setSize(24, 20) // Área de colisión más pequeña y realista
+      condor.body.setOffset(4, 6) // Centrar el área en el cuerpo del cóndor
 
       cursors = this.input.keyboard.createCursorKeys()
 
@@ -255,6 +260,12 @@ this.anims.create({
         drop.setScale(dropScale)
         drop.play('drip')
         drop.setVelocityY(Phaser.Math.Between(80, 120))
+        
+        // Ajustar el área de colisión de las gotas para ser más generosa (más fácil de atrapar)
+        // La imagen original es 64x64, pero ajustamos para hacer la colisión más amigable
+        drop.body.setSize(40, 50) // Área un poco más grande para facilitar la recolección
+        drop.body.setOffset(12, 7) // Centrar en la parte visible de la gota
+        
         drops.push(drop)
         this.physics.add.overlap(condor, drop, () => collectDrop(this, drop))
       }
@@ -269,6 +280,12 @@ this.anims.create({
         cloud.setScale(cloudScale)
         cloud.play('cloudLoop')
         cloud.setVelocityY(Phaser.Math.Between(40, 70))
+        
+        // Ajustar el área de colisión para que sea más pequeña y precisa
+        // La imagen original es 256x256, pero el área visible de humo es mucho menor
+        cloud.body.setSize(60, 60) // Reducir significativamente el área de colisión
+        cloud.body.setOffset(98, 98) // Centrar el área de colisión en la parte visible del humo
+        
         clouds.push(cloud)
         this.physics.add.overlap(condor, cloud, () => hitCloud(this, cloud))
       }
