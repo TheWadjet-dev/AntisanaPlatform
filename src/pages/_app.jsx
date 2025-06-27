@@ -42,20 +42,15 @@ export default function App({ Component, pageProps }) {
         {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
         
-        {/* Apple Touch Icons - múltiples tamaños para iOS */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/antisana1.webp" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/antisana1.webp" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/antisana1.webp" />
-        <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/antisana1.webp" />
-        <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/antisana1.webp" />
-        <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/antisana1.webp" />
-        <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/antisana1.webp" />
-        <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/antisana1.webp" />
-        <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/antisana1.webp" />
+        {/* Favicon - Solo PNG */}
+        <link rel="icon" href="/assets/images/iconfinal.png" type="image/png" />
+        <link rel="shortcut icon" href="/assets/images/iconfinal.png" />
         
-        {/* Favicon */}
-        <link rel="icon" href="/assets/images/antisana1.webp" />
-        <link rel="shortcut icon" href="/assets/images/antisana1.webp" />
+        {/* Apple Touch Icons - PNG para mejor compatibilidad */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/iconfinal.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/iconfinal.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/iconfinal.png" />
+        <link rel="apple-touch-icon" href="/assets/images/iconfinal.png" />
       </Head>
       <Component {...pageProps} />
     </>

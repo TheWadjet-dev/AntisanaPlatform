@@ -1,4 +1,4 @@
-const CACHE_NAME = 'antisana-platform-v2'
+const CACHE_NAME = 'antisana-platform-v7'
 const urlsToCache = [
   '/',
   '/home',
@@ -10,6 +10,7 @@ const urlsToCache = [
   '/assets/images/antisana1.webp',
   '/assets/images/antisana2.webp',
   '/assets/images/antisana3.webp',
+  '/assets/images/iconfinal.png',
   '/sprites/bird_condor.png',
   '/sprites/water_drop.png',
   '/sprites/smoke_loop.png',
