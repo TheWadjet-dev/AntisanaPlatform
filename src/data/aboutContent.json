@@ -1,0 +1,317 @@
+{
+  "header": {
+    "title": "🏔️ ¿Qué es el Sistema Antisana? 🏔️",
+    "description": "El ecosistema Antisana es como una **fábrica mágica de agua** en las montañas de Ecuador. ¡Es donde nace el agua que llega a tu casa en Quito!"
+  },
+  "carousel": {
+    "images": ["antisana1.webp", "antisana2.webp", "antisana3.webp"],
+    "captions": [
+      "Reserva Ecológica Antisana - Vista panorámica",
+      "Ecosistemas únicos del páramo andino",
+      "Biodiversidad y conservación natural"
+    ]
+  },
+  "waterCycle": {
+    "title": "💧 El Ciclo Mágico del Agua 💧",
+    "subtitle": "¡Descubre cómo funciona la fábrica de agua más importante de Quito!",
+    "steps": [
+      {
+        "icon": "☁️",
+        "title": "Nubes Viajeras",
+        "description": "Las nubes llegan desde el Amazonas cargadas de agua"
+      },
+      {
+        "icon": "🌧️",
+        "title": "Lluvia Especial",
+        "description": "En el páramo llueve más de 1000mm al año"
+      },
+      {
+        "icon": "🌱",
+        "title": "Plantas Esponja",
+        "description": "Los frailejones absorben el agua como esponjas gigantes"
+      },
+      {
+        "icon": "🏔️",
+        "title": "Montaña Guardiana",
+        "description": "El volcán Antisana protege y filtra el agua"
+      },
+      {
+        "icon": "💧",
+        "title": "Agua Pura",
+        "description": "El agua baja limpia hacia la ciudad de Quito"
+      }
+    ]
+  },
+  "lamicaSystem": {
+    "title": "🏗️ Sistema La Mica: La Tubería Gigante 🏗️",
+    "subtitle": "¿Sabías que hay una tubería súper larga que trae agua desde el Antisana hasta tu casa?",
+    "facts": [
+      {
+        "icon": "📏",
+        "title": "¡48 kilómetros!",
+        "description": "Es como caminar desde Quito hasta Sangolquí"
+      },
+      {
+        "icon": "🚰",
+        "title": "Agua para todos",
+        "description": "Abastece al 30% de la población de Quito"
+      },
+      {
+        "icon": "🔧",
+        "title": "Súper tecnología",
+        "description": "Construido con la mejor ingeniería ecuatoriana"
+      },
+      {
+        "icon": "💎",
+        "title": "Agua premium",
+        "description": "El agua del Antisana es de las más puras del mundo"
+      }
+    ]
+  },
+  "fauna": {
+    "title": "🦅 Animales Increíbles del Antisana 🦅",
+    "subtitle": "¡Conoce a los habitantes más geniales de esta reserva natural!",
+    "animals": [
+      {
+        "name": "Cóndor Andino",
+        "emoji": "🦅",
+        "description": "El ave más grande de América del Sur. ¡Sus alas miden hasta 3 metros!",
+        "funFact": "Puede volar hasta 7,000 metros de altura"
+      },
+      {
+        "name": "Oso de Anteojos",
+        "emoji": "🐻",
+        "description": "El único oso de Sudamérica. Tiene manchas blancas alrededor de los ojos como anteojos.",
+        "funFact": "Es vegetariano y le encantan las bromelias"
+      },
+      {
+        "name": "Lobo de Páramo",
+        "emoji": "🐺",
+        "description": "En realidad es un zorro muy inteligente que vive en las montañas.",
+        "funFact": "Tiene patas grandes para no hundirse en la nieve"
+      },
+      {
+        "name": "Tapir de Montaña",
+        "emoji": "🦏",
+        "description": "Un animal prehistórico que parece un cerdo gigante con trompa pequeña.",
+        "funFact": "Es el jardinero del bosque porque esparce semillas"
+      },
+      {
+        "name": "Colibríes Gigantes",
+        "emoji": "🐦",
+        "description": "Los colibríes más grandes del mundo viven aquí.",
+        "funFact": "Baten sus alas 80 veces por segundo"
+      },
+      {
+        "name": "Curiquingue",
+        "emoji": "🦆",
+        "description": "Una gaviota que vive en las montañas, muy inteligente.",
+        "funFact": "Puede vivir hasta 4,000 metros de altura"
+      }
+    ]
+  },
+  "flora": {
+    "title": "🌸 Plantas Súper Especiales 🌸",
+    "subtitle": "¡Las plantas del Antisana son como súper héroes de la naturaleza!",
+    "plants": [
+      {
+        "name": "Frailejones",
+        "emoji": "🌻",
+        "description": "Plantas gigantes que parecen girasoles peludos. ¡Son las guardianas del agua!",
+        "funFact": "Pueden vivir más de 100 años y almacenar 40 litros de agua"
+      },
+      {
+        "name": "Almohadillas",
+        "emoji": "🟢",
+        "description": "Plantas que crecen como cojines verdes en el suelo.",
+        "funFact": "Protegen el suelo de la erosión y son súper resistentes"
+      },
+      {
+        "name": "Orquídeas de Altura",
+        "emoji": "🌺",
+        "description": "Flores hermosas que crecen en los árboles de las montañas.",
+        "funFact": "Algunas solo florecen una vez al año"
+      },
+      {
+        "name": "Bromelias",
+        "emoji": "🍍",
+        "description": "Plantas que parecen piñas pequeñas y crecen en los árboles.",
+        "funFact": "Son como pequeños tanques de agua para los animales"
+      },
+      {
+        "name": "Pajonales",
+        "emoji": "🌾",
+        "description": "Pastos dorados que cubren las montañas como un mar de oro.",
+        "funFact": "Sus raíces pueden medir hasta 3 metros de profundidad"
+      }
+    ]
+  },
+  "history": {
+    "title": "📚 Historia del Parque Nacional Antisana 📚",
+    "subtitle": "¡Una reserva con mucha historia por contar!",
+    "timeline": [
+      {
+        "year": "1993",
+        "event": "Creación del Parque",
+        "description": "Ecuador crea oficialmente el Parque Nacional Antisana para proteger este ecosistema único.",
+        "icon": "🏛️"
+      },
+      {
+        "year": "2000s",
+        "event": "Construcción Sistema La Mica",
+        "description": "Se construye el sistema de agua más moderno del país.",
+        "icon": "🚧"
+      },
+      {
+        "year": "2010",
+        "event": "Reserva de Biósfera",
+        "description": "La UNESCO reconoce la importancia mundial del Antisana.",
+        "icon": "🌍"
+      },
+      {
+        "year": "Presente",
+        "event": "Conservación Activa",
+        "description": "Científicos y guardaparques trabajan todos los días para proteger este tesoro natural.",
+        "icon": "🔬"
+      }
+    ]
+  },
+  "guardians": {
+    "title": "👨‍🔬 Los Guardianes del Antisana 👩‍🔬",
+    "subtitle": "¡Conoce a los héroes que protegen este lugar mágico!",
+    "roles": [
+      {
+        "title": "Guardaparques",
+        "emoji": "🥾",
+        "description": "Caminan por las montañas cuidando a los animales y plantas.",
+        "tasks": ["Proteger la fauna", "Vigilar el ecosistema", "Guiar a visitantes"]
+      },
+      {
+        "title": "Biólogos",
+        "emoji": "🔬",
+        "description": "Estudian los animales y plantas para entender mejor la naturaleza.",
+        "tasks": ["Investigar especies", "Contar animales", "Estudiar el clima"]
+      },
+      {
+        "title": "Ingenieros del Agua",
+        "emoji": "⚙️",
+        "description": "Cuidan que el sistema de agua funcione perfectamente.",
+        "tasks": ["Mantener tuberías", "Controlar calidad", "Operar sistemas"]
+      },
+      {
+        "title": "Educadores Ambientales",
+        "emoji": "📖",
+        "description": "Enseñan a las personas sobre la importancia del Antisana.",
+        "tasks": ["Dar charlas", "Crear programas", "Concientizar"]
+      }
+    ]
+  },
+  "curiosities": {
+    "title": "🤔 Datos Súper Curiosos 🤔",
+    "subtitle": "¡Cosas increíbles que te van a sorprender del Antisana!",
+    "facts": [
+      {
+        "icon": "📐",
+        "title": "¡Súper Grande!",
+        "description": "El Parque Nacional Antisana tiene 120,000 hectáreas. ¡Es más grande que toda la ciudad de Quito!"
+      },
+      {
+        "icon": "🌡️",
+        "title": "Frío Extremo",
+        "description": "En las noches puede hacer hasta -10°C. ¡Más frío que un congelador!"
+      },
+      {
+        "icon": "💨",
+        "title": "Aire Especial",
+        "description": "El aire tiene 50% menos oxígeno que en Quito. ¡Por eso es difícil respirar!"
+      },
+      {
+        "icon": "🏔️",
+        "title": "Volcán Gigante",
+        "description": "El volcán Antisana mide 5,753 metros. ¡Es el cuarto volcán más alto de Ecuador!"
+      },
+      {
+        "icon": "💧",
+        "title": "Fábrica de Agua",
+        "description": "Produce 2 metros cúbicos de agua por segundo. ¡Suficiente para llenar una piscina cada minuto!"
+      },
+      {
+        "icon": "🦋",
+        "title": "Biodiversidad Única",
+        "description": "Hay más de 400 especies de plantas y 100 especies de aves diferentes."
+      }
+    ]
+  },
+  "conservation": {
+    "title": "🌱 ¿Por Qué es Importante Conservar el Antisana? 🌱",
+    "subtitle": "¡Este lugar es súper importante para todos nosotros!",
+    "reasons": [
+      {
+        "icon": "💧",
+        "title": "Agua Para Todos",
+        "description": "Sin el Antisana, no tendríamos agua limpia en nuestras casas."
+      },
+      {
+        "icon": "🌬️",
+        "title": "Aire Puro",
+        "description": "Las plantas del páramo limpian el aire que respiramos."
+      },
+      {
+        "icon": "🦅",
+        "title": "Casa de Animales",
+        "description": "Muchos animales únicos viven solo aquí y en ningún otro lugar del mundo."
+      },
+      {
+        "icon": "🌡️",
+        "title": "Control del Clima",
+        "description": "Ayuda a regular la temperatura y las lluvias en todo Ecuador."
+      },
+      {
+        "icon": "🧬",
+        "title": "Laboratorio Natural",
+        "description": "Los científicos estudian aquí para hacer nuevos descubrimientos."
+      },
+      {
+        "icon": "🎓",
+        "title": "Escuela de la Naturaleza",
+        "description": "Aprendemos sobre la naturaleza y cómo cuidar nuestro planeta."
+      }
+    ]
+  },
+  "howToHelp": {
+    "title": "🤝 ¿Cómo Puedes Ayudar a Proteger el Antisana? 🤝",
+    "subtitle": "¡Tú también puedes ser un guardián del Antisana!",
+    "actions": [
+      {
+        "icon": "💧",
+        "title": "Cuida el Agua",
+        "description": "No dejes el grifo abierto y reporta fugas de agua."
+      },
+      {
+        "icon": "🗑️",
+        "title": "No Tires Basura",
+        "description": "Siempre bota la basura en su lugar y recicla."
+      },
+      {
+        "icon": "📚",
+        "title": "Aprende y Enseña",
+        "description": "Aprende sobre la naturaleza y comparte lo que sabes."
+      },
+      {
+        "icon": "🚗",
+        "title": "Menos Contaminación",
+        "description": "Camina, usa bicicleta o transporte público cuando puedas."
+      },
+      {
+        "icon": "🌱",
+        "title": "Planta Árboles",
+        "description": "Participa en actividades de reforestación en tu comunidad."
+      },
+      {
+        "icon": "👥",
+        "title": "Únete a Grupos",
+        "description": "Participa en grupos de conservación y actividades ambientales."
+      }
+    ]
+  }
+}

@@ -10,6 +10,19 @@ export default function App({ Component, pageProps }) {
         .register('/sw.js')
         .then((registration) => {
           console.log('Service Worker registrado:', registration)
+          
+          // Escuchar actualizaciones del Service Worker
+          navigator.serviceWorker.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'SW_UPDATED') {
+              console.log('Service Worker actualizado, recargando página...')
+              window.location.reload()
+            }
+          })
+          
+          // Verificar si hay actualizaciones
+          registration.addEventListener('updatefound', () => {
+            console.log('Nueva versión del Service Worker encontrada')
+          })
         })
         .catch((error) => {
           console.log('Error al registrar Service Worker:', error)

@@ -1,0 +1,12 @@
+// Exportaciones de componentes About
+export { default as SectionHeader } from './SectionHeader'
+export { default as ImageCarousel } from './ImageCarousel'
+export { default as WaterCycleSection } from './WaterCycleSection'
+export { default as LaMicaSystemSection } from './LaMicaSystemSection'
+export { default as FaunaSection } from './FaunaSection'
+export { default as FloraSection } from './FloraSection'
+export { default as HistorySection } from './HistorySection'
+export { default as GuardiansSection } from './GuardiansSection'
+export { default as CuriositiesSection } from './CuriositiesSection'
+export { default as ConservationSection } from './ConservationSection'
+export { default as HowToHelpSection } from './HowToHelpSection'
