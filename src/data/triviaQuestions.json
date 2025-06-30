@@ -1,0 +1,464 @@
+{
+  "categories": {
+    "geografia": {
+      "name": "Geografía del Antisana",
+      "icon": "🏔️",
+      "color": "green"
+    },
+    "ecosistema": {
+      "name": "Ecosistema y Naturaleza",
+      "icon": "🌿",
+      "color": "emerald"
+    },
+    "fauna": {
+      "name": "Animales del Antisana",
+      "icon": "🦅",
+      "color": "blue"
+    },
+    "flora": {
+      "name": "Plantas del Antisana",
+      "icon": "🌺",
+      "color": "pink"
+    },
+    "agua": {
+      "name": "Sistema de Agua",
+      "icon": "💧",
+      "color": "cyan"
+    },
+    "ciencia": {
+      "name": "Ciencia y Tecnología",
+      "icon": "🔬",
+      "color": "purple"
+    },
+    "datos": {
+      "name": "Datos Curiosos",
+      "icon": "📊",
+      "color": "orange"
+    },
+    "historia": {
+      "name": "Historia del Parque",
+      "icon": "📜",
+      "color": "amber"
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "category": "geografia",
+      "question": "🏔️ ¿Dónde se encuentra el ecosistema Antisana?",
+      "options": ["Perú", "Ecuador", "Colombia", "Bolivia"],
+      "answer": "Ecuador",
+      "explanation": "El Antisana está en Ecuador, en los Andes. Es una montaña muy alta donde nace el agua que llega a Quito.",
+      "funFact": "El volcán Antisana mide 5,758 metros - ¡como 15 Torres Eiffel apiladas!",
+      "difficulty": "facil",
+      "points": 10
+    },
+    {
+      "id": 2,
+      "category": "ecosistema",
+      "question": "🌿 ¿Qué tipo de ecosistema predomina en el Antisana?",
+      "options": ["Selva tropical", "Desierto", "Páramo", "Manglar"],
+      "answer": "Páramo",
+      "explanation": "El páramo es como una esponja gigante que absorbe agua de la lluvia y las nubes.",
+      "funFact": "Los páramos solo existen en las montañas muy altas de América del Sur. ¡Son súper especiales!",
+      "difficulty": "facil",
+      "points": 10
+    },
+    {
+      "id": 3,
+      "category": "fauna",
+      "question": "🦅 ¿Cuál de estos animales es típico del Antisana?",
+      "options": ["Cóndor andino", "Jaguar", "Tiburón", "Oso polar"],
+      "answer": "Cóndor andino",
+      "explanation": "El cóndor andino es el ave más grande de América y vive en las montañas del Antisana.",
+      "funFact": "Los cóndores pueden volar hasta 5,000 metros de altura y vivir más de 100 años. ¡Son increíbles!",
+      "difficulty": "facil",
+      "points": 10
+    },
+    {
+      "id": 4,
+      "category": "agua",
+      "question": "💧 ¿Cuántos litros de agua por segundo produce la Laguna La Mica?",
+      "options": ["100 litros", "650 litros", "1,000 litros", "200 litros"],
+      "answer": "650 litros",
+      "explanation": "La Laguna La Mica produce 650 litros por segundo. ¡Es como llenar 13 bañeras cada segundo!",
+      "funFact": "Esa agua viaja por tuberías hasta llegar a tu casa en Quito. ¡Qué viaje tan largo!",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 5,
+      "category": "agua",
+      "question": "🏊‍♂️ ¿Cuántos millones de metros cúbicos puede guardar el embalse del Antisana?",
+      "options": ["10 millones", "24 millones", "50 millones", "5 millones"],
+      "answer": "24 millones",
+      "explanation": "El embalse puede guardar 24 millones de metros cúbicos. ¡Es como una piscina súper gigante!",
+      "funFact": "Este embalse fue construido en el año 2000. ¡Ya tiene 25 años cuidando nuestra agua!",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 6,
+      "category": "agua",
+      "question": "🏭 ¿Cuál es la planta de tratamiento más grande que recibe agua del Antisana?",
+      "options": ["El Placer", "El Troje", "Bellavista", "Conocoto"],
+      "answer": "El Troje",
+      "explanation": "La planta El Troje es la más grande y recibe 800 litros por segundo del Antisana.",
+      "funFact": "En El Troje el agua se limpia y se hace segura para beber antes de llegar a tu casa.",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 7,
+      "category": "ciencia",
+      "question": "🔬 ¿A qué altura están las torres científicas que estudian el Antisana?",
+      "options": ["2,000 metros", "3,000 metros", "4,250 metros", "6,000 metros"],
+      "answer": "4,250 metros",
+      "explanation": "Las torres científicas están a 4,250 metros de altura desde 2019, estudiando cómo funciona el páramo.",
+      "funFact": "¡A esa altura hace mucho frío! Los científicos usan ropa muy abrigada para trabajar allí.",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 8,
+      "category": "datos",
+      "question": "🚰 ¿Cuántos kilómetros de tuberías llevan el agua por Quito?",
+      "options": ["1,000 km", "3,500 km", "7,600 km", "10,000 km"],
+      "answer": "7,600 km",
+      "explanation": "Hay 7,600 kilómetros de tuberías. ¡Si las pusiéramos en línea recta podrían dar 3 vueltas al Ecuador!",
+      "funFact": "Estas tuberías funcionan las 24 horas del día para que siempre tengas agua en casa.",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 9,
+      "category": "agua",
+      "question": "🌊 ¿Qué ríos del Antisana ayudan a La Mica a producir agua?",
+      "options": ["Solo La Mica", "Antisana, Jatunhuayco y Diguchi", "Guayas y Pastaza", "Napo y Coca"],
+      "answer": "Antisana, Jatunhuayco y Diguchi",
+      "explanation": "Los ríos Antisana (430 L/s), Jatunhuayco (200 L/s) y Diguchi (20 L/s) trabajan junto con La Mica.",
+      "funFact": "¡Juntos producen más de 1,300 litros por segundo! Eso es muchísima agua limpia.",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 10,
+      "category": "datos",
+      "question": "👨‍👩‍👧‍👦 ¿A cuántas personas en Quito les llega agua del Antisana?",
+      "options": ["1 millón", "2 millones", "3 millones", "500,000"],
+      "answer": "3 millones",
+      "explanation": "El agua del Antisana llega a casi 3 millones de personas. ¡Eso incluye tu familia!",
+      "funFact": "El Antisana es como un súper héroe que cuida el agua de toda la ciudad de Quito.",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 11,
+      "category": "geografia",
+      "question": "🌡️ ¿Por qué hace tanto frío en el Antisana?",
+      "options": ["Está cerca del polo", "Está muy alto en las montañas", "Hay muchos ventiladores", "Es invierno todo el año"],
+      "answer": "Está muy alto en las montañas",
+      "explanation": "El Antisana está a más de 3,100 metros de altura. Mientras más alto subas, más frío hace.",
+      "funFact": "Por cada 100 metros que subes, la temperatura baja aproximadamente 1 grado. ¡Es por eso que hay nieve en la cima!",
+      "difficulty": "facil",
+      "points": 10
+    },
+    {
+      "id": 12,
+      "category": "ecosistema",
+      "question": "🧽 ¿Por qué decimos que el páramo es como una esponja?",
+      "options": ["Porque es amarillo", "Porque absorbe agua", "Porque es cuadrado", "Porque limpia"],
+      "answer": "Porque absorbe agua",
+      "explanation": "El páramo absorbe agua de la lluvia y las nubes, y la guarda en el suelo como una esponja gigante.",
+      "funFact": "Una hectárea de páramo puede absorber hasta 4,000 litros de agua. ¡Es increíble!",
+      "difficulty": "facil",
+      "points": 10
+    },
+    {
+      "id": 13,
+      "category": "fauna",
+      "question": "🐻 ¿Qué otro animal grande vive en el Antisana además del cóndor?",
+      "options": ["Oso polar", "Oso de anteojos", "Oso panda", "Oso grizzly"],
+      "answer": "Oso de anteojos",
+      "explanation": "El oso de anteojos es el único oso de América del Sur y vive en las montañas del Antisana.",
+      "funFact": "Se llama 'de anteojos' porque tiene manchas blancas alrededor de los ojos que parecen lentes. ¡Muy elegante!",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 14,
+      "category": "ciencia",
+      "question": "🌱 ¿Qué estudian los científicos en las torres del Antisana?",
+      "options": ["Aliens", "El clima y las plantas", "Dinosaurios", "Planetas"],
+      "answer": "El clima y las plantas",
+      "explanation": "Los científicos estudian cómo las plantas usan el agua, el clima y cómo funciona el ecosistema del páramo.",
+      "funFact": "También estudian algo llamado 'evapotranspiración' - que es cómo las plantas 'respiran' y liberan agua al aire.",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 15,
+      "category": "agua",
+      "question": "⚡ ¿El agua del Antisana también produce electricidad?",
+      "options": ["No, solo es para beber", "Sí, en centrales hidroeléctricas", "Solo cuando llueve", "Solo en verano"],
+      "answer": "Sí, en centrales hidroeléctricas",
+      "explanation": "El agua del Antisana también se usa para generar electricidad limpia en centrales hidroeléctricas.",
+      "funFact": "El sistema Mica genera 8 MW de energía eléctrica. ¡Es energía limpia que ayuda a cuidar el planeta!",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 16,
+      "category": "datos",
+      "question": "🏗️ ¿En qué año se construyó el embalse del Antisana?",
+      "options": ["1990", "2000", "2010", "2020"],
+      "answer": "2000",
+      "explanation": "El embalse se construyó en el año 2000, hace 25 años. ¡Ha estado cuidando nuestra agua desde entonces!",
+      "funFact": "Construir el embalse tomó varios años y fue un proyecto muy importante para asegurar agua para Quito.",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 17,
+      "category": "ecosistema",
+      "question": "🐰 ¿Qué animales pequeños puedes encontrar en el páramo?",
+      "options": ["Pingüinos", "Conejos y venados", "Cocodrilos", "Tiburones"],
+      "answer": "Conejos y venados",
+      "explanation": "En el páramo viven conejos, venados, y muchas aves pequeñas que se han adaptado al frío.",
+      "funFact": "Los animales del páramo tienen pelaje más grueso y son más pequeños para conservar el calor corporal.",
+      "difficulty": "facil",
+      "points": 10
+    },
+    {
+      "id": 18,
+      "category": "agua",
+      "question": "🏪 ¿Cuántos tanques de agua hay en todo Quito?",
+      "options": ["50 tanques", "150 tanques", "365 tanques", "1000 tanques"],
+      "answer": "365 tanques",
+      "explanation": "Hay 365 tanques de distribución en todo el Distrito Metropolitano de Quito. ¡Uno para cada día del año!",
+      "funFact": "Estos tanques pueden almacenar más de 350,000 metros cúbicos de agua en total. ¡Es una reserva gigante!",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 19,
+      "category": "ciencia",
+      "question": "🌡️ ¿Desde cuándo funcionan las torres científicas modernas en el Antisana?",
+      "options": ["2015", "2019", "2020", "2022"],
+      "answer": "2019",
+      "explanation": "Las torres científicas más modernas empezaron a funcionar en 2019 para estudiar mejor el páramo.",
+      "funFact": "Estas torres usan tecnología muy avanzada llamada 'eddy covariance' para medir cómo se mueve el aire y el agua.",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 20,
+      "category": "datos",
+      "question": "🌍 ¿Qué pasaría si no cuidáramos el Antisana?",
+      "options": ["Nada cambiaría", "Tendríamos menos agua limpia", "Habría más agua", "Solo afectaría a los animales"],
+      "answer": "Tendríamos menos agua limpia",
+      "explanation": "Si no cuidamos el Antisana, tendríamos menos agua limpia para beber, cocinar y bañarnos en Quito.",
+      "funFact": "Por eso EPMAPS y FONAG trabajan todos los días restaurando el páramo y cuidando los humedales. ¡Son los guardianes del agua!",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 21,
+      "category": "geografia",
+      "question": "📅 ¿En qué año se creó la Reserva Ecológica Antisana?",
+      "options": ["1990", "1993", "2000", "2021"],
+      "answer": "1993",
+      "explanation": "La Reserva Ecológica Antisana se creó en julio de 1993, y en 2021 cambió a Parque Nacional.",
+      "funFact": "¡Lleva más de 30 años protegiendo la naturaleza y el agua que llega a tu casa!",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 22,
+      "category": "geografia",
+      "question": "📏 ¿Cuántas hectáreas tiene el Parque Nacional Antisana?",
+      "options": ["50,000 hectáreas", "120,581 hectáreas", "200,000 hectáreas", "80,000 hectáreas"],
+      "answer": "120,581 hectáreas",
+      "explanation": "El parque tiene 120,581 hectáreas. ¡Eso es como 169,000 campos de fútbol juntos!",
+      "funFact": "Es tan grande que podrías caminar durante días y días sin salir del parque.",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 23,
+      "category": "ecosistema",
+      "question": "🌿 ¿Cuántos tipos de ecosistemas diferentes protege el Antisana?",
+      "options": ["3 ecosistemas", "9 ecosistemas", "15 ecosistemas", "5 ecosistemas"],
+      "answer": "9 ecosistemas",
+      "explanation": "El Antisana protege 9 tipos diferentes de ecosistemas, desde bosques hasta glaciares.",
+      "funFact": "¡Es como tener 9 mundos naturales diferentes en un solo lugar! Cada uno con plantas y animales únicos.",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 24,
+      "category": "ecosistema",
+      "question": "🏔️ ¿Hasta qué altura llega la vegetación en el Antisana?",
+      "options": ["3,000 metros", "4,500 metros", "5,000 metros", "6,000 metros"],
+      "answer": "4,500 metros",
+      "explanation": "Los páramos llegan hasta los 4,500 metros. Más arriba solo hay líquenes y musgo por el frío extremo.",
+      "funFact": "A esa altura el aire es tan delgado que es difícil respirar. ¡Las plantas son súper resistentes!",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 25,
+      "category": "fauna",
+      "question": "🦎 ¿Cuántas especies de mamíferos viven en el Antisana?",
+      "options": ["25 especies", "50 especies", "73 especies", "100 especies"],
+      "answer": "73 especies",
+      "explanation": "En el Antisana viven 73 especies diferentes de mamíferos, desde pequeños roedores hasta osos.",
+      "funFact": "Eso es más especies de mamíferos que países tiene Europa. ¡El Antisana es súper diverso!",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 26,
+      "category": "fauna",
+      "question": "🐸 ¿Cómo se llama el sapo que es casi exclusivo del Antisana?",
+      "options": ["Sapo dorado", "Osornosapo de Antisana", "Sapo gigante", "Sapo de cristal"],
+      "answer": "Osornosapo de Antisana",
+      "explanation": "El Osornosapo de Antisana es una especie casi exclusiva de esta reserva. ¡Es muy especial!",
+      "funFact": "Su nombre científico es 'Osornophryne antisana'. ¡Hasta lleva el nombre del volcán!",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 27,
+      "category": "fauna",
+      "question": "🦌 ¿Cuál de estos animales también vive en el Antisana?",
+      "options": ["Elefante", "Tapir andino", "Jirafa", "León"],
+      "answer": "Tapir andino",
+      "explanation": "El tapir andino es un mamífero grande que vive en las montañas del Antisana. ¡Es como un cerdito gigante!",
+      "funFact": "Los tapires son parientes lejanos de los rinocerontes y los caballos. ¡Son animales muy antiguos!",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 28,
+      "category": "fauna",
+      "question": "🦅 ¿Cuántas especies de aves se han reportado en la Laguna La Mica?",
+      "options": ["20 especies", "50 especies", "80 especies", "115 especies"],
+      "answer": "50 especies",
+      "explanation": "En la Laguna La Mica y sus alrededores se han encontrado 50 especies diferentes de aves.",
+      "funFact": "¡Y eso es solo en una pequeña parte del parque! Se cree que hay muchas más especies por descubrir.",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 29,
+      "category": "ecosistema",
+      "question": "🌨️ ¿Qué tipo de vegetación existe arriba de los 4,500 metros?",
+      "options": ["Árboles grandes", "Líquenes y musgo", "Flores coloridas", "Hierba común"],
+      "answer": "Líquenes y musgo",
+      "explanation": "Arriba de los 4,500 metros hace tanto frío que solo pueden vivir líquenes y musgo. Se llama 'gelidofitia'.",
+      "funFact": "¡Gelidofitia significa 'plantas del hielo'! Son las plantas más resistentes del mundo.",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 30,
+      "category": "ecosistema",
+      "question": "🌳 ¿Entre qué alturas se encuentran los bosques de neblina?",
+      "options": ["1000-1500 metros", "2000-2900 metros", "3000-4000 metros", "500-1000 metros"],
+      "answer": "2000-2900 metros",
+      "explanation": "Los bosques de neblina están entre los 2000 y 2900 metros. Se llaman así porque siempre están cubiertos de nubes.",
+      "funFact": "En estos bosques siempre hay neblina porque las nubes chocan contra la montaña. ¡Es súper misterioso!",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 31,
+      "category": "flora",
+      "question": "🌺 ¿Cuántas especies de plantas endémicas hay en los páramos altos?",
+      "options": ["2 especies", "6 especies", "10 especies", "15 especies"],
+      "answer": "6 especies",
+      "explanation": "Hay 6 especies de plantas endémicas en los páramos altos. ¡Endémicas significa que solo existen allí!",
+      "funFact": "Estas plantas son como tesoros únicos del Antisana. ¡No las encontrarás en ningún otro lugar del mundo!",
+      "difficulty": "dificil",
+      "points": 20
+    },
+    {
+      "id": 32,
+      "category": "flora",
+      "question": "🌿 ¿Cómo son las hojas de las plantas del páramo?",
+      "options": ["Muy grandes y delgadas", "Vellosas y gruesas", "Transparentes", "De colores brillantes"],
+      "answer": "Vellosas y gruesas",
+      "explanation": "Las plantas del páramo tienen hojas vellosas y gruesas para protegerse del frío y los vientos fuertes.",
+      "funFact": "¡Es como si las plantas usaran abrigos peludos para no pasar frío en las montañas!",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 33,
+      "category": "flora",
+      "question": "🌳 ¿Qué árboles especiales se encuentran en los bosques del Antisana?",
+      "options": ["Pino y eucalipto", "Cedro, nogal y laurel", "Manzano y peral", "Palma y bambú"],
+      "answer": "Cedro, nogal y laurel",
+      "explanation": "En los bosques del Antisana crecen cedro, nogal, laurel de cera, motilón y arrayán. ¡Son árboles nativos muy especiales!",
+      "funFact": "Estos árboles pueden vivir cientos de años y algunos son usados para hacer muebles muy finos.",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 34,
+      "category": "historia",
+      "question": "📅 ¿Cuándo cambió de Reserva Ecológica a Parque Nacional?",
+      "options": ["2020", "2021", "2022", "2023"],
+      "answer": "2021",
+      "explanation": "En 2021 cambió oficialmente de Reserva Ecológica Antisana a Parque Nacional Antisana.",
+      "funFact": "¡Ahora tiene una protección aún más fuerte! Los parques nacionales son las áreas protegidas más importantes.",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 35,
+      "category": "fauna",
+      "question": "🐾 ¿Cuál de estos depredadores vive en el Antisana?",
+      "options": ["Tigre", "Puma", "Leopardo", "Lobo"],
+      "answer": "Puma",
+      "explanation": "El puma es el gran depredador del Antisana. Es un felino muy ágil que puede vivir en las montañas.",
+      "funFact": "Los pumas pueden saltar hasta 5 metros de altura. ¡Son súper atletas de la naturaleza!",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 33,
+      "category": "geografia",
+      "question": "🗺️ ¿En qué provincias se encuentra el Parque Nacional Antisana?",
+      "options": ["Quito y Pichincha", "Napo y Pichincha", "Napo y Azuay", "Pichincha y Imbabura"],
+      "answer": "Napo y Pichincha",
+      "explanation": "El Parque Nacional Antisana está ubicado entre las provincias de Napo y Pichincha.",
+      "funFact": "¡Es tan grande que necesita dos provincias para contenerlo! Cada provincia cuida su parte del parque.",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 34,
+      "category": "datos",
+      "question": "🏢 ¿Qué fundación ayuda en el manejo y conservación del parque?",
+      "options": ["Fundación Galápagos", "Fundación Antisana", "Fundación Verde", "Fundación Agua"],
+      "answer": "Fundación Antisana",
+      "explanation": "La Fundación Antisana cumple un rol muy importante en el manejo y conservación del parque.",
+      "funFact": "Esta fundación también ayuda a las comunidades locales con proyectos como criaderos de truchas y agricultura orgánica.",
+      "difficulty": "medio",
+      "points": 15
+    },
+    {
+      "id": 35,
+      "category": "ecosistema",
+      "question": "🌊 ¿Por qué es tan importante conservar los humedales del Antisana?",
+      "options": ["Son bonitos", "Son fuentes de agua para Quito", "Tienen oro", "Son fáciles de cuidar"],
+      "answer": "Son fuentes de agua para Quito",
+      "explanation": "Los humedales del Antisana son súper importantes porque son las fuentes de agua para Quito y otras poblaciones.",
+      "funFact": "¡Sin estos humedales no tendríamos agua limpia en nuestras casas! Por eso es tan importante cuidarlos.",
+      "difficulty": "facil",
+      "points": 10
+    }
+  ]
+}

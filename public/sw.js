@@ -1,4 +1,4 @@
-const CACHE_NAME = 'antisana-platform-v7'
+const CACHE_NAME = 'antisana-platform-v8'
 const urlsToCache = [
   '/',
   '/home',
@@ -22,7 +22,7 @@ const urlsToCache = [
 
 // Instalar SW
 self.addEventListener('install', (event) => {
-  console.log('Service Worker: Instalando...')
+  console.log('Service Worker: Instalando v8...')
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
@@ -52,11 +52,9 @@ self.addEventListener('install', (event) => {
           })
       })
       .then(() => {
-        console.log('Service Worker: Instalación completada')
-        // En iOS, skipWaiting puede causar problemas, así que lo hacemos opcional
-        if ('skipWaiting' in self) {
-          return self.skipWaiting()
-        }
+        console.log('Service Worker: Instalación completada v8')
+        // Forzar activación inmediata para limpiar cache viejo
+        return self.skipWaiting()
       })
       .catch(err => {
         console.error('Service Worker: Error durante instalación:', err)
@@ -112,7 +110,7 @@ self.addEventListener('fetch', (event) => {
 
 // Actualizar SW
 self.addEventListener('activate', (event) => {
-  console.log('Service Worker: Activando...')
+  console.log('Service Worker: Activando v8...')
   const cacheWhitelist = [CACHE_NAME]
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -125,9 +123,16 @@ self.addEventListener('activate', (event) => {
         })
       )
     }).then(() => {
-      console.log('Service Worker: Activado')
-      // Tomar control inmediatamente
-      return self.clients.claim()
+      console.log('Service Worker: Activado v8')
+      // Tomar control inmediatamente y recargar todas las páginas
+      return self.clients.claim().then(() => {
+        // Notificar a todas las páginas abiertas para que se recarguen
+        return self.clients.matchAll().then(clients => {
+          clients.forEach(client => {
+            client.postMessage({type: 'SW_UPDATED'})
+          })
+        })
+      })
     })
   )
 })
