@@ -16,7 +16,7 @@ import {
   HowToHelpSection
 } from '../components/about'
 
-export default function AboutRefactored() {
+export default function AboutClean() {
   const { data, loading, error } = useAboutData()
 
   if (loading) {
