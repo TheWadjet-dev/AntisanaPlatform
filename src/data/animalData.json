@@ -1,0 +1,298 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Oso de Anteojos",
+      "scientificName": "Tremarctos ornatus",
+      "description": "El único oso nativo de Sudamérica, conocido por las marcas claras alrededor de sus ojos. Es una especie vulnerable que habita en los bosques nublados.",
+      "habitat": "Bosques nublados y páramos",
+      "image": "https://www.elcomercio.com/wp-content/uploads/2022/12/15-2.jpg",
+      "facts": [
+        "Principalmente vegetariano",
+        "Excelente trepador",
+        "Especie vulnerable a la extinción",
+        "Construye plataformas en los árboles para dormir"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Puma",
+      "scientificName": "Puma concolor",
+      "description": "Gran felino adaptable que habita desde el nivel del mar hasta los páramos andinos. Es un cazador solitario y territorial.",
+      "habitat": "Bosques, páramos y montañas",
+      "image": "https://outdoornebraska.gov/wp-content/uploads/2023/03/JH20170221_2722-rgb_2x1.jpg",
+      "facts": [
+        "Puede saltar hasta 5 metros de altura",
+        "Territorio de hasta 100 km²",
+        "Cazador nocturno y crepuscular",
+        "Segundo felino más grande de América"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Bandurria Andina",
+      "scientificName": "Theristicus melanopis branickii",
+      "description": "Ave zancuda endémica de los Andes, conocida por su pico largo y curvado. Habita en humedales de altura.",
+      "habitat": "Humedales y lagunas de páramo",
+      "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/631855587/480",
+      "facts": [
+        "Se alimenta de invertebrados acuáticos",
+        "Nidifica en colonias pequeñas",
+        "Migra estacionalmente",
+        "Indicador de la salud de humedales"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cóndor Andino",
+      "scientificName": "Vultur gryphus",
+      "description": "El ave más grande de América del Sur, símbolo del ecosistema andino. Puede volar a alturas de hasta 7,000 metros.",
+      "habitat": "Páramos y montañas",
+      "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434114311/480",
+      "facts": [
+        "Envergadura de hasta 3.3 metros",
+        "Puede vivir más de 70 años",
+        "Es carroñero y ayuda a limpiar el ecosistema",
+        "Ave nacional de varios países andinos"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Macá Plateado",
+      "scientificName": "Podiceps occipitalis",
+      "description": "Ave acuática pequeña que habita en lagunas de altura. Excelente buceador y nadador.",
+      "habitat": "Lagunas y humedales de páramo",
+      "image": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/113555251/640",
+      "facts": [
+        "Construye nidos flotantes",
+        "Se alimenta de peces pequeños e invertebrados",
+        "Puede bucear hasta 6 metros",
+        "Cortejo con danzas elaboradas"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Jambato",
+      "scientificName": "Atelopus sp.",
+      "description": "Pequeño anfibio endémico de los páramos ecuatorianos. Muchas especies están en peligro crítico de extinción.",
+      "habitat": "Páramos húmedos y riachuelos",
+      "image": "https://static.wixstatic.com/media/780a0c_9379af24d0034090b49d113a98f5c9f1~mv2.png/v1/fill/w_568,h_466,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/780a0c_9379af24d0034090b49d113a98f5c9f1~mv2.png",
+      "facts": [
+        "Piel tóxica como defensa",
+        "Respiración cutánea",
+        "Indicador de calidad ambiental",
+        "Reproducción ligada al agua"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Comadreja Andina",
+      "scientificName": "Mustela frenata",
+      "description": "Pequeño carnívoro ágil y adaptable. Excelente cazador de roedores en el páramo.",
+      "habitat": "Páramos y bosques de altura",
+      "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/15955272/original.jpeg",
+      "facts": [
+        "Metabolismo muy acelerado",
+        "Puede cazar presas más grandes que ella",
+        "Pelaje cambia de color en invierno",
+        "Territorial y solitaria"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Venado de Páramo",
+      "scientificName": "Odocoileus ustus",
+      "description": "Cérvido endémico de los páramos ecuatorianos. Adaptado a la vida en las altas montañas.",
+      "habitat": "Páramos y pastizales de altura",
+      "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/30204902/original.jpg",
+      "facts": [
+        "Endémico del Ecuador",
+        "Activo durante el amanecer y atardecer",
+        "Se alimenta de pastos y arbustos",
+        "Especie vulnerable"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Zorro Culpeo",
+      "scientificName": "Lycalopex culpaeus",
+      "description": "Cánido adaptado a las altas montañas, conocido por su pelaje espeso y cola larga con punta negra.",
+      "habitat": "Páramos y pastizales de altura",
+      "image": "https://static.inaturalist.org/photos/109855225/large.jpg",
+      "facts": [
+        "Cazador nocturno",
+        "Se alimenta de roedores y aves",
+        "Pelaje que cambia de color según la estación",
+        "El zorro más grande de Sudamérica"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Tapir Andino",
+      "scientificName": "Tapirus pinchaque",
+      "description": "El tapir más pequeño del mundo, conocido como \"danta de montaña\". Especie en peligro de extinción.",
+      "habitat": "Bosques nublados y páramos",
+      "image": "https://live.staticflickr.com/8248/8583123456_3b7e5f8c2e_k.jpg",
+      "facts": [
+        "Herbívoro, se alimenta de más de 100 especies de plantas",
+        "Excelente nadador",
+        "Dispersor de semillas clave",
+        "Especie en peligro crítico"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Venado de Cola Blanca",
+      "scientificName": "Odocoileus virginianus",
+      "description": "Cérvido ampliamente distribuido en América, adaptable a diversos hábitats desde bosques hasta páramos.",
+      "habitat": "Bosques, páramos y áreas abiertas",
+      "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/53995297/original.jpg",
+      "facts": [
+        "Excelente saltador, puede saltar hasta 3 metros",
+        "Cambia de pelaje según la estación",
+        "Las astas de los machos se renuevan anualmente",
+        "Herbívoro que se alimenta al amanecer y atardecer"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Caracara Carunculado",
+      "scientificName": "Phalcoboenus carunculatus",
+      "description": "Ave rapaz endémica de los páramos andinos, conocida por las carúnculas naranjas en su cara.",
+      "habitat": "Páramos y pastizales de altura",
+      "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/616324242/480",
+      "facts": [
+        "Endémico de los páramos andinos",
+        "Se alimenta de carroña e invertebrados",
+        "Construye nidos en acantilados rocosos",
+        "Las carúnculas se intensifican durante la época reproductiva"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Yal Plomizo",
+      "scientificName": "Phrygilus unicolor",
+      "description": "Pequeño pájaro cantor de los Andes, con plumaje gris uniforme adaptado a los páramos fríos.",
+      "habitat": "Páramos y pastizales de altura",
+      "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/613294830/480",
+      "facts": [
+        "Se alimenta principalmente de semillas",
+        "Forma bandadas fuera de la época reproductiva",
+        "Tolerante a temperaturas extremas",
+        "Canto melodioso característico del páramo"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Gaviota Andina",
+      "scientificName": "Chroicocephalus serranus",
+      "description": "Única gaviota que habita permanentemente en lagos de alta montaña en los Andes.",
+      "habitat": "Lagos y lagunas de páramo",
+      "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/191301971/480",
+      "facts": [
+        "Única gaviota de alta montaña en el mundo",
+        "Anida en colonias en islas de lagunas",
+        "Se alimenta de peces, invertebrados y huevos",
+        "Adaptada a la vida en altitudes superiores a 3000m"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Conejo Andino",
+      "scientificName": "Sylvilagus andinus",
+      "description": "Pequeño lagomorfo endémico de los páramos andinos, con pelaje denso adaptado al frío.",
+      "habitat": "Páramos y pastizales de altura",
+      "image": "https://live.staticflickr.com/8534/29847265142_6d7f3a8e9c_k.jpg",
+      "facts": [
+        "Pelaje muy denso para protegerse del frío",
+        "Activo principalmente al amanecer y atardecer",
+        "Se alimenta de pastos y hierbas del páramo",
+        "Construye madrigueras entre rocas y vegetación"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Colibrí Cobrizo",
+      "scientificName": "Patagona gigas",
+      "description": "El colibrí más grande del mundo, con plumaje de tonos cobrizos que habita en los Andes.",
+      "habitat": "Páramos y laderas montañosas",
+      "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/433094671/480",
+      "facts": [
+        "El colibrí más grande del mundo (hasta 23 cm)",
+        "Aleteo más lento que otros colibríes",
+        "Se alimenta del néctar de flores altoandinas",
+        "Migra estacionalmente siguiendo la floración"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Urraca Turquesa",
+      "scientificName": "Cyanolyca turcosa",
+      "description": "Ave de la familia de los córvidos con plumaje azul turquesa brillante, endémica de bosques nublados.",
+      "habitat": "Bosques nublados y páramos arbustivos",
+      "image": "https://static.inaturalist.org/photos/23506819/large.jpg",
+      "facts": [
+        "Plumaje azul turquesa iridiscente",
+        "Omnívora, se alimenta de frutos e insectos",
+        "Vive en grupos familiares pequeños",
+        "Inteligente y curiosa, típica de los córvidos"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Alpaca",
+      "scientificName": "Vicugna pacos",
+      "description": "Camélido doméstico criado por los pueblos andinos por su fibra de alta calidad.",
+      "habitat": "Páramos y pastizales de altura",
+      "image": "https://live.staticflickr.com/7859/47272645123_8f4e2d6a9b_k.jpg",
+      "facts": [
+        "Domesticada hace más de 6000 años",
+        "Fibra más fina y suave que la lana de oveja",
+        "Puede cargar hasta 25% de su peso corporal",
+        "Excelente adaptación a la altura y frío extremo"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Tangara ventriescarlata",
+      "scientificName": "Anisognathus igniventris",
+      "description": "Tangara de montaña con colores vibrantes, conocida por su canto melodioso similar a un clarinete.",
+      "habitat": "Bosques nublados y páramos arbustivos",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Anisognathus_igniventris_Scarlet-bellied_Mountain-Tanager.jpg",
+      "facts": [
+        "Plumaje negro con vientre rojo brillante",
+        "Canto melodioso que recuerda a un clarinete",
+        "Se alimenta de frutos e insectos",
+        "Forma bandadas mixtas con otras especies"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Frutero Verdinegro",
+      "scientificName": "Pipreola riefferii",
+      "description": "Ave frugívora de bosques nublados con plumaje verde y negro, importante dispersor de semillas.",
+      "habitat": "Bosques nublados y bordes de páramo",
+      "image": "https://i0.wp.com/birdscolombia.com/wp-content/uploads/2016/05/pipreola-riefferii.jpg?resize=1180%2C885&ssl=1",
+      "facts": [
+        "Importante dispersor de semillas del bosque",
+        "Dimorfismo sexual: machos más coloridos",
+        "Se alimenta exclusivamente de frutos",
+        "Prefiere el dosel medio del bosque nublado"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Mirlo Grande",
+      "scientificName": "Turdus fuscater",
+      "description": "El mirlo más grande de los Andes, con plumaje pardo oscuro y canto territorial potente.",
+      "habitat": "Bosques, páramos y áreas semi-abiertas",
+      "image": "https://avesexoticas.org/wp-content/uploads/2018/11/Turdus-fuscater.jpg",
+      "facts": [
+        "El mirlo más grande de Sudamérica",
+        "Canto territorial muy potente y melodioso",
+        "Omnívoro: lombrices, insectos y frutos",
+        "Construye nidos en árboles y arbustos densos"
+      ]
+    }
+  ]
+}

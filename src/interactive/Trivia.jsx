@@ -206,7 +206,7 @@ export default function Trivia() {
                 <div className="bg-yellow-50 rounded-lg p-4 mb-6">
                   <h3 className="font-bold text-yellow-800 mb-2">🏆 ¡Lo que aprendiste hoy!</h3>
                   <p className="text-sm text-yellow-700">
-                    Ahora sabes más sobre el Antisana, la laguna La Mica, y cómo llega el agua limpia a tu casa. 
+                    Ahora sabes más sobre el Antisana, la Laguna de La Mica, y cómo llega el agua limpia a tu casa. 
                     ¡Sigue explorando la plataforma para aprender más!
                   </p>
                 </div>

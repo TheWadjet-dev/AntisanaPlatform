@@ -126,7 +126,7 @@ export default function About() {
             <div className="bg-white rounded-lg p-4 shadow-md text-center">
               <div className="text-4xl mb-3">🏞️</div>
               <h3 className="font-bold text-purple-700 mb-2">3. Se Forma en Lagunas</h3>
-              <p className="text-sm">El agua se junta en hermosas lagunas como La Mica, donde se mantiene muy limpia</p>
+              <p className="text-sm">El agua se junta en hermosas lagunas como la Laguna de La Mica, donde se mantiene muy limpia</p>
             </div>
             
             <div className="bg-white rounded-lg p-4 shadow-md text-center">
@@ -138,15 +138,15 @@ export default function About() {
 
           <div className="bg-white rounded-lg p-6 shadow-md">
             <h3 className="text-xl font-bold mb-4 text-center text-green-800">
-              🌟 ¡La Laguna La Mica! 🌟
+              🌟 ¡La Laguna de La Mica! 🌟
             </h3>
             <p className="text-center text-gray-700 leading-relaxed mb-4">
-              En el corazón del Antisana está la <strong>Laguna La Mica</strong>, una laguna mágica que es como 
+              En el corazón del Antisana está la <strong>Laguna de La Mica</strong>, una laguna mágica que es como 
               un tesoro de agua limpia. Esta laguna especial da <strong>650 litros de agua por segundo</strong> 
               - ¡eso es como llenar 13 bañeras cada segundo!
             </p>
             <div className="bg-blue-50 rounded-lg p-4">
-              <h4 className="font-bold text-blue-800 mb-2">🏞️ Los Hermanos de La Mica:</h4>
+              <h4 className="font-bold text-blue-800 mb-2">🏞️ Los Hermanos de la Laguna de La Mica:</h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
                 <div className="text-center">
                   <strong>Río Antisana</strong><br/>
@@ -181,7 +181,7 @@ export default function About() {
             </p>
             
             <div className="bg-blue-50 rounded-lg p-4 mb-4">
-              <h3 className="font-bold text-blue-800 mb-2">🎯 ¿Sabías qué?</h3>
+              <h3 className="font-bold text-blue-800 mb-2">🎯 ¿Sabías que?</h3>
               <ul className="text-sm space-y-1 text-gray-700">
                 <li>• El volcán Antisana mide <strong>5,758 metros</strong> de altura</li>
                 <li>• Tiene nieve todo el año porque hace mucho frío</li>
@@ -245,7 +245,7 @@ export default function About() {
             <div className="bg-white rounded-lg p-4 text-center shadow-md">
               <div className="text-3xl mb-2">🌊</div>
               <h3 className="font-bold text-blue-700 mb-2">Agua por Segundo</h3>
-              <p className="text-sm">La Laguna La Mica produce 
+              <p className="text-sm">La Laguna de La Mica produce 
                 <strong> 650 litros por segundo</strong> - ¡como llenar 13 bañeras cada segundo!</p>
             </div>
             
@@ -265,10 +265,10 @@ export default function About() {
           </div>
         </section>
 
-        {/* Sistema La Mica - Información Técnica para Niños */}
+        {/* Sistema de la Laguna de La Mica - Información Técnica para Niños */}
         <section className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-6 md:p-8 mb-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-blue-800">
-            🏊‍♂️ El Sistema La Mica - ¡La Fábrica de Agua del Antisana! 🏊‍♂️
+            🏊‍♂️ El Sistema de la Laguna de La Mica - ¡La Fábrica de Agua del Antisana! 🏊‍♂️
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -276,7 +276,7 @@ export default function About() {
               <h3 className="text-lg font-bold text-blue-700 mb-3">🌊 Los Ríos Trabajadores</h3>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between items-center bg-blue-50 p-2 rounded">
-                  <span><strong>Laguna La Mica</strong></span>
+                  <span><strong>Laguna de La Mica</strong></span>
                   <span className="text-blue-600 font-bold">650 L/s</span>
                 </div>
                 <div className="flex justify-between items-center bg-green-50 p-2 rounded">
@@ -502,7 +502,7 @@ export default function About() {
               <h3 className="font-bold text-blue-800 mb-2">🦅 Aves</h3>
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-700">50+ especies</div>
-                <p className="text-xs">Solo en la Laguna La Mica</p>
+                <p className="text-xs">Solo en la Laguna de La Mica</p>
               </div>
             </div>
             
