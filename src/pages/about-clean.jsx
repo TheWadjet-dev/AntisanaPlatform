@@ -66,7 +66,7 @@ export default function AboutClean() {
         {/* Ciclo del agua */}
         <WaterCycleSection data={data.waterCycle} />
 
-        {/* Sistema La Mica */}
+        {/* Sistema de la Laguna de La Mica */}
         <LaMicaSystemSection data={data.lamicaSystem} />
 
         {/* Fauna */}

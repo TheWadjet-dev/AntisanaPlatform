@@ -78,10 +78,10 @@
     {
       "id": 4,
       "category": "agua",
-      "question": "💧 ¿Cuántos litros de agua por segundo produce la Laguna La Mica?",
+      "question": "💧 ¿Cuántos litros de agua por segundo produce la Laguna de La Mica?",
       "options": ["100 litros", "650 litros", "1,000 litros", "200 litros"],
       "answer": "650 litros",
-      "explanation": "La Laguna La Mica produce 650 litros por segundo. ¡Es como llenar 13 bañeras cada segundo!",
+      "explanation": "La Laguna de La Mica produce 650 litros por segundo. ¡Es como llenar 13 bañeras cada segundo!",
       "funFact": "Esa agua viaja por tuberías hasta llegar a tu casa en Quito. ¡Qué viaje tan largo!",
       "difficulty": "medio",
       "points": 15
@@ -133,10 +133,10 @@
     {
       "id": 9,
       "category": "agua",
-      "question": "🌊 ¿Qué ríos del Antisana ayudan a La Mica a producir agua?",
-      "options": ["Solo La Mica", "Antisana, Jatunhuayco y Diguchi", "Guayas y Pastaza", "Napo y Coca"],
+      "question": "🌊 ¿Qué ríos del Antisana ayudan a la Laguna de La Mica a producir agua?",
+      "options": ["Solo la Laguna de La Mica", "Antisana, Jatunhuayco y Diguchi", "Guayas y Pastaza", "Napo y Coca"],
       "answer": "Antisana, Jatunhuayco y Diguchi",
-      "explanation": "Los ríos Antisana (430 L/s), Jatunhuayco (200 L/s) y Diguchi (20 L/s) trabajan junto con La Mica.",
+      "explanation": "Los ríos Antisana (430 L/s), Jatunhuayco (200 L/s) y Diguchi (20 L/s) trabajan junto con la Laguna de La Mica.",
       "funFact": "¡Juntos producen más de 1,300 litros por segundo! Eso es muchísima agua limpia.",
       "difficulty": "dificil",
       "points": 20
@@ -342,10 +342,10 @@
     {
       "id": 28,
       "category": "fauna",
-      "question": "🦅 ¿Cuántas especies de aves se han reportado en la Laguna La Mica?",
+      "question": "🦅 ¿Cuántas especies de aves se han reportado en la Laguna de La Mica?",
       "options": ["20 especies", "50 especies", "80 especies", "115 especies"],
       "answer": "50 especies",
-      "explanation": "En la Laguna La Mica y sus alrededores se han encontrado 50 especies diferentes de aves.",
+      "explanation": "En la Laguna de La Mica y sus alrededores se han encontrado 50 especies diferentes de aves.",
       "funFact": "¡Y eso es solo en una pequeña parte del parque! Se cree que hay muchas más especies por descubrir.",
       "difficulty": "medio",
       "points": 15

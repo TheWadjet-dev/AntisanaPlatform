@@ -9,9 +9,8 @@ export default function Navbar() {
   const links = [
     { href: '/home', label: 'Inicio' },
     { href: '/about', label: 'Acerca del Sistema Antisana' },
-    { href: '/data-visualization', label: 'Visualización de Datos' },
-    { href: '/interactive', label: 'Exploración Interactiva' },
-    { href: '/volcan', label: 'Volcán 3D' },
+    { href: '/flora-fauna', label: 'Flora y Fauna' },
+    { href: '/interactive', label: 'Quizz' },
     { href: '/actividad', label: 'Cóndor Guardián' }
   ]
 

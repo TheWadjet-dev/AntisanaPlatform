@@ -43,7 +43,7 @@
     ]
   },
   "lamicaSystem": {
-    "title": "🏗️ Sistema La Mica: La Tubería Gigante 🏗️",
+    "title": "🏗️ Sistema de la Laguna de La Mica: La Tubería Gigante 🏗️",
     "subtitle": "¿Sabías que hay una tubería súper larga que trae agua desde el Antisana hasta tu casa?",
     "facts": [
       {
@@ -152,27 +152,27 @@
     "timeline": [
       {
         "year": "1993",
-        "event": "Creación del Parque",
-        "description": "Ecuador crea oficialmente el Parque Nacional Antisana para proteger este ecosistema único.",
-        "icon": "🏛️"
+        "event": "Creación de la Reserva Ecológica",
+        "description": "Se crea la Reserva Ecológica Antisana para proteger este ecosistema único y su biodiversidad.",
+        "icon": "�"
       },
       {
-        "year": "2000s",
-        "event": "Construcción Sistema La Mica",
-        "description": "Se construye el sistema de agua más moderno del país.",
-        "icon": "🚧"
+        "year": "2000",
+        "event": "Construcción del Embalse Gigante",
+        "description": "Se construye el embalse gigante del sistema de la Laguna de La Mica, la infraestructura hídrica más importante del país.",
+        "icon": "🏊‍♂️"
       },
       {
-        "year": "2010",
-        "event": "Reserva de Biósfera",
-        "description": "La UNESCO reconoce la importancia mundial del Antisana.",
-        "icon": "🌍"
-      },
-      {
-        "year": "Presente",
-        "event": "Conservación Activa",
-        "description": "Científicos y guardaparques trabajan todos los días para proteger este tesoro natural.",
+        "year": "2019",
+        "event": "Torres Científicas Modernas",
+        "description": "Se instalan torres científicas modernas para el monitoreo avanzado del ecosistema y el clima.",
         "icon": "🔬"
+      },
+      {
+        "year": "2021",
+        "event": "Parque Nacional",
+        "description": "Se convierte oficialmente en Parque Nacional, elevando su estatus de protección y conservación.",
+        "icon": "🏞️"
       }
     ]
   },
