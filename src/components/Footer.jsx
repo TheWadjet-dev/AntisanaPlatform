@@ -65,7 +65,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              <p>© 2025 Grupo 12. Todos los derechos reservados.</p>
+              <p>© 2025 DevNation 593. Todos los derechos reservados.</p>
               <p className="text-xs mt-1">Plataforma educativa - Sistema Antisana</p>
             </div>
             <div className="text-sm text-gray-400">
