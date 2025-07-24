@@ -25,7 +25,6 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('Service Worker: Cache abierto')
         // Cachear recursos esenciales primero
         const essentialResources = [
           '/',
@@ -51,7 +50,6 @@ self.addEventListener('install', (event) => {
           })
       })
       .then(() => {
-        console.log('Service Worker: Instalación completada v8')
         // Forzar activación inmediata para limpiar cache viejo
         return self.skipWaiting()
       })
@@ -109,14 +107,12 @@ self.addEventListener('fetch', (event) => {
 
 // Actualizar SW
 self.addEventListener('activate', (event) => {
-  console.log('Service Worker: Activando v8...')
   const cacheWhitelist = [CACHE_NAME]
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
-            console.log('Service Worker: Eliminando cache viejo:', cacheName)
             return caches.delete(cacheName)
           }
         })
