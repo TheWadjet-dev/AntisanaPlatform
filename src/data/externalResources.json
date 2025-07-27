@@ -1,0 +1,68 @@
+{
+  "externalResources": [
+    {
+      "id": 3,
+      "title": "FONAG - Fondo para la Protección del Agua",
+      "description": "Organización dedicada a la conservación de las fuentes de agua que abastecen a Quito, incluido el Sistema Antisana.",
+      "url": "https://www.fonag.org.ec/",
+      "imageUrl": "/assets/images/recursos/fonag.jpg",
+      "category": "organizacion"
+    },
+    {
+      "id": 4,
+      "title": "EPMAPS - Empresa Pública Metropolitana de Agua Potable y Saneamiento",
+      "description": "Gestiona el sistema de agua potable de Quito, incluyendo el Sistema La Mica-Antisana.",
+      "url": "https://www.aguaquito.gob.ec/",
+      "imageUrl": "/assets/images/recursos/epmaps.jpg",
+      "category": "empresa"
+    },
+    {
+      "id": 5,
+      "title": "Proyecto Antisana",
+      "description": "Monitoreo Hidrométrico Ecuador",
+      "url": "https://web-antisana.vercel.app/",
+      "imageUrl": "/assets/images/recursos/fundacion-antisana.jpg",
+      "category": "educacion"
+    },
+    {
+      "id": 6,
+      "title": "iNaturalist - Observaciones en Reserva Ecológica Antisana",
+      "description": "Plataforma de ciencia ciudadana con observaciones de flora y fauna del Antisana.",
+      "url": "https://www.inaturalist.org/places/reserva-ecologica-antisana-ec",
+      "imageUrl": "/assets/images/recursos/inaturalist.jpg",
+      "category": "ciencia"
+    }
+  ],
+  "categories": [
+    {
+      "id": "organizacion",
+      "name": "ONGs y Fundaciones",
+      "icon": "🤝"
+    },
+    {
+      "id": "ciencia",
+      "name": "Investigación y Ciencia",
+      "icon": "🔬"
+    },
+    {
+      "id": "educacion",
+      "name": "Recursos Educativos",
+      "icon": "📚"
+    },
+    {
+      "id": "empresa",
+      "name": "Empresas Públicas",
+      "icon": "🏢"
+    },
+    {
+      "id": "medios",
+      "name": "Medios y Publicaciones",
+      "icon": "📰"
+    },
+    {
+      "id": "turismo",
+      "name": "Turismo Sostenible",
+      "icon": "🧳"
+    }
+  ]
+}
