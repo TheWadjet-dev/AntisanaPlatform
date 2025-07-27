@@ -1,7 +1,7 @@
 {
   "header": {
     "title": "🏔️ ¿Qué es el Sistema Antisana? 🏔️",
-    "description": "El ecosistema Antisana es como una **fábrica mágica de agua** en las montañas de Ecuador. ¡Es donde nace el agua que llega a tu casa en Quito!"
+    "description": "El ecosistema Antisana es como una fábrica mágica de agua en las montañas de Ecuador. ¡Es donde nace el agua que llega a tu casa en Quito!"
   },
   "carousel": {
     "images": ["antisana1.webp", "antisana2.webp", "antisana3.webp"],
@@ -207,7 +207,7 @@
     ]
   },
   "curiosities": {
-    "title": "🤔 Datos Súper Curiosos 🤔",
+    "title": "🤔 Datos Curiosos 🤔",
     "subtitle": "¡Cosas increíbles que te van a sorprender del Antisana!",
     "facts": [
       {
@@ -243,7 +243,7 @@
     ]
   },
   "conservation": {
-    "title": "🌱 ¿Por Qué es Importante Conservar el Antisana? 🌱",
+    "title": "🌱 ¿Por qué es importante conservar el Antisana? 🌱",
     "subtitle": "¡Este lugar es súper importante para todos nosotros!",
     "reasons": [
       {
@@ -279,7 +279,7 @@
     ]
   },
   "howToHelp": {
-    "title": "🤝 ¿Cómo Puedes Ayudar a Proteger el Antisana? 🤝",
+    "title": "🤝 ¿Cómo puedes ayudar a proteger el Antisana? 🤝",
     "subtitle": "¡Tú también puedes ser un guardián del Antisana!",
     "actions": [
       {

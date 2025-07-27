@@ -1,9 +1,14 @@
 import MainLayout from '../layouts/MainLayout'
 import { useState } from 'react'
 import animalDataJson from '../data/animalData.json'
+import videoResourcesJson from '../data/videoResources.json'
+import VideoEmbed from '../components/VideoEmbed'
 
 // Obtener los datos de animales desde el archivo JSON
 const animalData = animalDataJson.animals
+
+// Obtener los datos de videos desde el archivo JSON
+const videoData = videoResourcesJson.videos
 
 export default function FloraFauna() {
   const [selectedAnimal, setSelectedAnimal] = useState(null)
@@ -93,21 +98,32 @@ export default function FloraFauna() {
 
           {/* Sección de Videos */}
           {activeTab === 'videos' && (
-            <div className="text-center py-16">
-              <div className="max-w-2xl mx-auto">
-                <div className="text-6xl mb-6">🎬</div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Videos Próximamente</h2>
-                <p className="text-gray-600 mb-8">
-                  Estamos preparando una colección increíble de videos de la fauna del Antisana.
-                  Podrás ver a estos majestuosos animales en su hábitat natural.
+            <div className="py-8">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-2xl font-bold text-green-800 mb-6 text-center">
+                  🎬 Videos de la Fauna del Antisana
+                </h2>
+                <p className="text-gray-600 mb-8 text-center">
+                  Disfruta de estos videos donde podrás observar a estos majestuosos animales en su hábitat natural.
+                  Cada video muestra la belleza y diversidad del ecosistema del Antisana.
                 </p>
-                <div className="bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-xl">
-                  <p className="font-semibold">
-                    🎥 Videos documentales de alta calidad
-                    <br />
-                    📹 Grabaciones en tiempo real
-                    <br />
-                    🌿 Comportamiento natural de los animales
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {videoData.map(video => (
+                    <VideoEmbed 
+                      key={video.id}
+                      url={video.url}
+                      title={video.title}
+                    />
+                  ))}
+                </div>
+                
+                <div className="mt-8 bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-xl">
+                  <h3 className="font-bold text-xl mb-2 text-center">¿Sabías que?</h3>
+                  <p className="text-center font-semibold">
+                    El volcán Antisana y sus alrededores son el hogar de numerosas especies de aves,
+                    mamíferos y otros animales que dependen de este ecosistema único para su supervivencia.
+                    Observar su comportamiento en videos nos ayuda a entender la importancia de su conservación.
                   </p>
                 </div>
               </div>

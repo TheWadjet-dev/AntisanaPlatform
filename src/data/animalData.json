@@ -132,7 +132,7 @@
       "scientificName": "Tapirus pinchaque",
       "description": "El tapir más pequeño del mundo, conocido como \"danta de montaña\". Especie en peligro de extinción.",
       "habitat": "Bosques nublados y páramos",
-      "image": "https://live.staticflickr.com/8248/8583123456_3b7e5f8c2e_k.jpg",
+      "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/43068088/medium.jpg",
       "facts": [
         "Herbívoro, se alimenta de más de 100 especies de plantas",
         "Excelente nadador",
@@ -202,7 +202,7 @@
       "scientificName": "Sylvilagus andinus",
       "description": "Pequeño lagomorfo endémico de los páramos andinos, con pelaje denso adaptado al frío.",
       "habitat": "Páramos y pastizales de altura",
-      "image": "https://live.staticflickr.com/8534/29847265142_6d7f3a8e9c_k.jpg",
+      "image": "https://static.inaturalist.org/photos/84017278/medium.jpg",
       "facts": [
         "Pelaje muy denso para protegerse del frío",
         "Activo principalmente al amanecer y atardecer",
@@ -244,7 +244,7 @@
       "scientificName": "Vicugna pacos",
       "description": "Camélido doméstico criado por los pueblos andinos por su fibra de alta calidad.",
       "habitat": "Páramos y pastizales de altura",
-      "image": "https://live.staticflickr.com/7859/47272645123_8f4e2d6a9b_k.jpg",
+      "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/100229477/medium.jpg",
       "facts": [
         "Domesticada hace más de 6000 años",
         "Fibra más fina y suave que la lana de oveja",
