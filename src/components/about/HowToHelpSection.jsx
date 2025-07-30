@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SectionHeader from './SectionHeader'
+import Link from 'next/link'
 
 export default function HowToHelpSection({ data }) {
   return (
@@ -41,13 +42,19 @@ export default function HowToHelpSection({ data }) {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <div className="text-4xl mb-4">🌟</div>
-        <h3 className="text-2xl font-bold text-green-800 mb-4">
-          ¡Juntos podemos proteger el Antisana!
-        </h3>
-        <p className="text-lg text-green-700 max-w-2xl mx-auto">
-          Cada pequeña acción cuenta. Cuando cuidamos el Antisana, cuidamos nuestro futuro y el de todos los seres vivos que dependen de este ecosistema único.
-        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/flora-fauna" legacyBehavior>
+              <a className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-700 transition-colors text-lg">
+                Flora y Fauna
+              </a>
+            </Link>
+            <Link href="/interactive" legacyBehavior>
+              <a className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors text-lg">
+                Quizz
+              </a>
+            </Link>
+          </div>
+
       </motion.div>
     </section>
   )

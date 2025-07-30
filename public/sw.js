@@ -1,4 +1,5 @@
-const CACHE_NAME = 'antisana-platform-v8'
+const CACHE_NAME = 'antisana-platform-v9'
+const CACHE_VERSION = 9
 const urlsToCache = [
   '/',
   '/home',
@@ -21,7 +22,7 @@ const urlsToCache = [
 
 // Instalar SW
 self.addEventListener('install', (event) => {
-  console.log('Service Worker: Instalando v8...')
+  console.log('Service Worker: Instalando v9...')
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
@@ -51,7 +52,7 @@ self.addEventListener('install', (event) => {
           })
       })
       .then(() => {
-        console.log('Service Worker: Instalación completada v8')
+        console.log('Service Worker: Instalación completada v9')
         // Forzar activación inmediata para limpiar cache viejo
         return self.skipWaiting()
       })
@@ -109,7 +110,7 @@ self.addEventListener('fetch', (event) => {
 
 // Actualizar SW
 self.addEventListener('activate', (event) => {
-  console.log('Service Worker: Activando v8...')
+  console.log('Service Worker: Activando v9...')
   const cacheWhitelist = [CACHE_NAME]
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -122,16 +123,24 @@ self.addEventListener('activate', (event) => {
         })
       )
     }).then(() => {
-      console.log('Service Worker: Activado v8')
+      console.log('Service Worker: Activado v9')
       // Tomar control inmediatamente y recargar todas las páginas
       return self.clients.claim().then(() => {
         // Notificar a todas las páginas abiertas para que se recarguen
         return self.clients.matchAll().then(clients => {
           clients.forEach(client => {
-            client.postMessage({type: 'SW_UPDATED'})
+            client.postMessage({type: 'SW_UPDATED', version: CACHE_VERSION})
           })
         })
       })
     })
   )
+})
+
+// Escuchar mensajes de la aplicación
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    console.log('Service Worker: Recibido mensaje para forzar activación')
+    self.skipWaiting()
+  }
 })

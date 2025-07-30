@@ -82,6 +82,20 @@ La plataforma puede instalarse como una aplicación en dispositivos móviles y d
    - En móviles: Tocar "Añadir a pantalla de inicio"
    - En escritorio: Hacer clic en el ícono de instalación en la barra de direcciones
 
+## 🔄 Actualización y Caché
+
+La aplicación utiliza estrategias de caché para mejorar el rendimiento y permitir el funcionamiento offline. Sin embargo, esto puede causar que los navegadores muestren versiones antiguas de la aplicación. Para asegurar que siempre tienes la última versión:
+
+### Para usuarios:
+- **Forzar actualización manual**: Presionar Ctrl+F5 (Windows/Linux) o Cmd+Shift+R (Mac) para recargar ignorando la caché
+- **Borrar datos de navegación**: En la configuración del navegador, borrar cookies y caché del sitio
+- **Verificar version**: En la esquina inferior del pie de página se muestra la versión actual de la aplicación
+
+### Para desarrolladores:
+- El Service Worker implementa una estrategia de "cache-first, fallback-network" 
+- Se incluye versionado en el Service Worker para forzar actualizaciones
+- Se notifica a los usuarios cuando hay una nueva versión disponible
+
 ## 📚 Estructura del Proyecto
 
 ```

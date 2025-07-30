@@ -1,5 +1,7 @@
 import MainLayout from '../layouts/MainLayout'
 import { useAboutData } from '../hooks/useAboutData'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 // Componentes de sección
 import {
