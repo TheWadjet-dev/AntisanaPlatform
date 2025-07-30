@@ -65,7 +65,7 @@ export default function Interactive() {
                 📚 Información Completa
               </a>
               <a 
-                href="/actividad" 
+                href="/game" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
               >
                 🎮 Jugar Cóndor Guardián

@@ -1,11 +1,5 @@
 import React from 'react';
 
-/**
- * Componente para mostrar videos incrustados desde diferentes plataformas
- * @param {Object} props
- * @param {string} props.url - URL del video
- * @param {string} props.title - Título del video
- */
 const VideoEmbed = ({ url, title }) => {
   // Función para extraer el ID del video y generar la URL de incrustación
   const getEmbedUrl = (url) => {
@@ -49,9 +43,9 @@ const VideoEmbed = ({ url, title }) => {
           className="absolute top-0 left-0 w-full h-full"
           src={getEmbedUrl(url)}
           title={title}
+          allowFullScreen
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
         ></iframe>
       </div>
       <div className="p-4">

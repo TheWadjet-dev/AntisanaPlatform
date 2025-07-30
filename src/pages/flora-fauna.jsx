@@ -5,10 +5,10 @@ import videoResourcesJson from '../data/videoResources.json'
 import VideoEmbed from '../components/VideoEmbed'
 
 // Obtener los datos de animales desde el archivo JSON
-const animalData = animalDataJson.animals
+const animalData = animalDataJson?.animals || []
 
 // Obtener los datos de videos desde el archivo JSON
-const videoData = videoResourcesJson.videos
+const videoData = videoResourcesJson?.videos || []
 
 export default function FloraFauna() {
   const [selectedAnimal, setSelectedAnimal] = useState(null)
@@ -109,13 +109,20 @@ export default function FloraFauna() {
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {videoData.map(video => (
-                    <VideoEmbed 
-                      key={video.id}
-                      url={video.url}
-                      title={video.title}
-                    />
-                  ))}
+                  {Array.isArray(videoData) && videoData.length > 0 ? (
+                    videoData.map(video => (
+                      <div key={video.id} className="video-container">
+                        <VideoEmbed 
+                          url={video.url}
+                          title={video.title}
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <div className="col-span-2 text-center p-6 bg-gray-100 rounded-lg">
+                      <p>No hay videos disponibles actualmente.</p>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="mt-8 bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-xl">

@@ -11,8 +11,7 @@ export default function Navbar() {
     { href: '/about', label: 'Acerca del Sistema Antisana' },
     { href: '/flora-fauna', label: 'Flora y Fauna' },
     { href: '/interactive', label: 'Quizz' },
-    { href: '/game', label: 'Cóndor Guardián' },
-    { href: '/resources', label: 'Recursos Externos' }
+    { href: '/game', label: 'Cóndor Guardián' }
   ]
 
   const handleInstall = async () => {

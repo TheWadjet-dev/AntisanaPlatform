@@ -1,6 +1,24 @@
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { useServiceWorkerUpdates } from '../utils/useServiceWorkerUpdates'
 
 export default function Footer() {
+  const { newVersionAvailable, updateServiceWorker } = useServiceWorkerUpdates()
+  const [appVersion, setAppVersion] = useState('v9')
+
+  // Efecto para mostrar la versión desde el Service Worker
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then(registration => {
+        // Intentar obtener la versión del SW
+        navigator.serviceWorker.addEventListener('message', (event) => {
+          if (event.data && event.data.type === 'SW_UPDATED' && event.data.version) {
+            setAppVersion(`v${event.data.version}`)
+          }
+        })
+      }).catch(err => console.error('Error accediendo a serviceWorker:', err))
+    }
+  }, [])
   return (
     <footer className="bg-gray-800 text-white py-8 mt-16">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -72,6 +90,22 @@ export default function Footer() {
               <p>🇪🇨 Hecho con ❤️ en Ecuador</p>
               <p className="text-xs mt-1">Para la conservación del Antisana</p>
             </div>
+          </div>
+          
+          {/* Información de versión y actualización */}
+          <div className="mt-4 pt-3 border-t border-gray-700 flex justify-between items-center">
+            <div className="text-xs text-gray-500">
+              {appVersion}
+            </div>
+            
+            {newVersionAvailable && (
+              <button 
+                onClick={updateServiceWorker}
+                className="bg-green-600 text-white text-xs px-3 py-1 rounded hover:bg-green-700 transition-colors flex items-center"
+              >
+                <span className="mr-1">🔄</span> Nueva versión disponible - Actualizar
+              </button>
+            )}
           </div>
         </div>
       </div>
